@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/api/{errorid}={estado}', [
+'as' => 'cambio.estado',
+    'uses' => 'errorscontroller@cambioestado'
+]);
+
+Route::get('/api/estados', [
+'as' => 'mostrar.estados',
+    'uses' => 'errorscontroller@mostrarestados'
+]);
