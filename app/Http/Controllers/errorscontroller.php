@@ -135,16 +135,24 @@ if($errorid == "" && $estado == ){
     
         public function mostrarestados()
     {
-        /*$erroresactivos = errors::find(1);
+        $erroresactivos = errors::find(1);
         $erroresactivos = $erroresactivos;
-    return $erroresactivos;*/
+    return $erroresactivos;
+ 
             
+            
+            
+            
+            // MANDAR WEBSOCKET, FALTA PROBAR. 
+            
+            /*
 $client = new Client("ws://localhost:8989/ws");
 $client->send("list");
 
-echo $client->receive();
-            
         
+var_dump($client->receive());
+            
+       */ 
         
     }
     
