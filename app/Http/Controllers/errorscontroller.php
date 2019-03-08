@@ -138,21 +138,16 @@ if($errorid == "" && $estado == ){
         $erroresactivos = errors::find(1);
         $erroresactivos = $erroresactivos;
     return $erroresactivos;
- 
+      
             
             
-            
-            
-            // MANDAR WEBSOCKET, FALTA PROBAR. 
-            
+            //Codigo para mandar pause al tinyG.
             /*
 $client = new Client("ws://localhost:8989/ws");
-$client->send("list");
-
-        
+$client->send("version");   
 var_dump($client->receive());
-            
-       */ 
+            */
+        
         
     }
     
