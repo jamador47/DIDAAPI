@@ -15,6 +15,12 @@ class CreateErrorsTable extends Migration
     {
         Schema::create('errors', function (Blueprint $table) {
             $table->increments('id');
+           
+            $table->json('O');
+            $table->json('I');
+            
+            /*
+            //Circuito de emergencia
             $table->integer('O19')->nullable();
             $table->integer('I5')->nullable();
             $table->integer('I22')->nullable();
@@ -25,11 +31,22 @@ class CreateErrorsTable extends Migration
             $table->integer('I1')->nullable();
             $table->integer('I31')->nullable();
             $table->integer('I30')->nullable();
-           $table->integer('I29')->nullable();
+            $table->integer('I29')->nullable();
             $table->integer('I28')->nullable();
             $table->integer('I2')->nullable();
             $table->integer('I27')->nullable();
             $table->integer('O343')->nullable();
+            $table->integer('ENCODER')->nullable();
+            */
+            //
+            
+         
+
+            
+            
+      
+            
+            
             $table->timestamps();
         });
     }
