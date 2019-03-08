@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\errors;
-use GuzzleHttp\Client;
+use WebSocket\Client;
 
 class errorscontroller extends Controller
 {
@@ -135,9 +135,15 @@ if($errorid == "" && $estado == ){
     
         public function mostrarestados()
     {
-        $erroresactivos = errors::find(1);
+        /*$erroresactivos = errors::find(1);
         $erroresactivos = $erroresactivos;
-    return $erroresactivos;
+    return $erroresactivos;*/
+            
+$client = new Client("ws://localhost:8989/ws");
+$client->send("list");
+
+echo $client->receive();
+            
         
         
     }
