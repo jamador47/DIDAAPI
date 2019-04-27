@@ -33,6 +33,26 @@ Route::get('/api/arduino4/{O281}&{O280}&{O279}&{O278}&{O277}&{O276}&{O275}&{I274
 'as' => 'cambio.estado.arduino4',
     'uses' => 'errorscontroller@cambioestadoarduino4']);
 
+Route::get('/api/c1/{x}&{y}&{z}', [
+'as' => 'cambio.estado.c1',
+    'uses' => 'errorscontroller@cambioc1']);
+Route::get('/api/c2/{x}&{y}&{z}', [
+'as' => 'cambio.estado.c2',
+    'uses' => 'errorscontroller@cambioc2']);
+Route::get('/api/c3/{x}&{y}&{z}', [
+'as' => 'cambio.estado.c3',
+    'uses' => 'errorscontroller@cambioc3']);
+Route::get('/api/c4/{x}&{y}&{z}', [
+'as' => 'cambio.estado.c4',
+    'uses' => 'errorscontroller@cambioc4']);
+Route::get('/api/c5/{x}&{y}&{z}', [
+'as' => 'cambio.estado.c5',
+    'uses' => 'errorscontroller@cambioc5']);
+Route::get('/api/c6/{x}&{y}&{z}', [
+'as' => 'cambio.estado.c6',
+    'uses' => 'errorscontroller@cambioc6']);
+
+
 
 Route::get('/api/arduino5/{I304}&{I305}&{I306}&{I307}&{I308}&{I309}&{I310}&{O304}&{O305}&{O306}&{O307}&{O308}&{O309}&{O310}&{O311}&{O312}&{O313}&{O314}&{O315}&{O316}&{O317}&{O318}&{I320}&{I321}&{I322}&{I323}&{I324}&{I325}&{O322}&{O323}&{O324}&{O325}&{O326}&{O327}&{O328}&{O329}&{O330}&{O331}', [
 'as' => 'cambio.estado.arduino5',

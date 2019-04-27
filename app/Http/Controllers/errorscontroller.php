@@ -91,13 +91,13 @@ if($errorid == "" && $estado == ){
             
             for($i = 0; $i<=345; $i++)
             {        
-                $outputs[$i]= "-" ;       
+                $outputs[$i]= 0 ;       
                 
             }
             
             for($i = 1; $i<=436; $i++)
             {        
-                $inputs[$i]= "-"  ;   
+                $inputs[$i]= 0  ;   
                 
             }
             $errores = new errors;
@@ -109,19 +109,48 @@ if($errorid == "" && $estado == ){
                      $inputs[$numerror] = $estado;
                 $errores->I = $inputs;
                 $errores->O = $outputs;
-            $errores->save();     
-                     
+           
                      break;
                  case "O":
                      
                      $outputs[$numerror] = $estado; 
                      $errores->O =$outputs;
                      $errores->I = $inputs;
-            $errores->save();  
+    
                      
                      break;
              }
             
+                     $errores->dx1 = 0;
+            $errores->dx2 = 0;
+            $errores->sx1 = 0;
+            $errores->sx2 = 0;
+            $errores->x1 = 0;
+            $errores->y1 = 0;
+            $errores->x2 = 0;
+            $errores->y2 = 0;
+                $errores->x3 = 0;
+            $errores->y3 = 0;
+            $errores->x4 = 0;
+            $errores->y4 = 0;
+            $errores->x5 = 0;
+            $errores->y5 = 0;
+            $errores->x6 = 0;
+            $errores->y6 = 0;
+            $errores->z6 = 0;
+                        $errores->z5 = 0;
+
+                        $errores->z4 = 0;
+
+                        $errores->z3 = 0;
+
+                        $errores->z2 = 0;
+
+                        $errores->z1 = 0;
+
+            
+            $errores->save();
+
 
         }
         
@@ -204,21 +233,165 @@ if($errorid == "" && $estado == ){
         
 /*-- Plantilla para nuevos errores urgentes -- 
 
-if($errorid == "" && $estado == ){
- $pg = file_get_contents('http://URL');
-        
-    }
-    
- -------------------------------   */
-        
-// Guardar en la Base de datos
-   
 
+    
+ ------------DX1-------------------   */
+        
+if(intval($inputs[36]) >= 900){
+    
+    if (!($erroresactivos->dx1)){
+ $pg = file_get_contents('192.168.0.83/arduino/digital/47/1');
+    sleep(2);
+     $pg = file_get_contents('192.168.0.83/arduino/digital/47/0');
+        $erroresactivos->dx1 = 1;
+        $erroresactivos->save();
+
+    }
+    else{
+        
+        $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/0');
+               $erroresactivos->dx1 = 0;
+        $erroresactivos->save();
+    }
+}
+        
+/************-----------------DX2------------------***********/
+  if(intval($inputs[37]) >= 900){
+    
+    if (!($erroresactivos->dx2)){
+ $pg = file_get_contents('http://192.168.0.83/arduino/digital/12/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/12/0');
+        $erroresactivos->dx2 = 1;
+        $erroresactivos->save();
+
+    }
+    else{
+        
+        $pg = file_get_contents('http://192.168.0.83/arduino/digital/5/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/5/0');
+               $erroresactivos->dx2 = 0;
+        $erroresactivos->save();
+    }
+}      
+        
+        
+        
+        /************-----------------SX1------------------***********/
+  if(intval($inputs[38]) >= 900){
+    
+    if (!($erroresactivos->sx1)){
+ $pg = file_get_contents('http://192.168.0.82/arduino/digital/33/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/33/0');
+        $erroresactivos->sx1 = 1;
+        $erroresactivos->save();
+
+    }
+    else{
+        
+        $pg = file_get_contents('http://192.168.0.82/arduino/digital/32/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/32/0');
+               $erroresactivos->sx1 = 0;
+        $erroresactivos->save();
+    }
+}      
+        
+        
+        
+        /************-----------------SX2------------------***********/
+  if(intval($inputs[39]) >= 900){
+    
+    if (!($erroresactivos->sx2)){
+ $pg = file_get_contents('192.168.0.83/arduino/digital/44/1');
+    sleep(2);
+     $pg = file_get_contents('192.168.0.83/arduino/digital/44/0');
+        $erroresactivos->sx2 = 1;
+        $erroresactivos->save();
+
+    }
+    else{
+        
+        $pg = file_get_contents('192.168.0.83/arduino/digital/48/1');
+    sleep(2);
+     $pg = file_get_contents('192.168.0.83/arduino/digital/48/0');
+               $erroresactivos->sx2 = 0;
+        $erroresactivos->save();
+    }
+}      
+      
+      
         // En caso de que no sea el primer error 
                      
                    
              }
-            
+    
+    
+    
+    public function cambioc1($x,$y,$z){
+        $erroresactivos = errors::find(1);
+        $erroresactivos->x1 = $x;
+        $erroresactivos->y1 = $y;
+        $erroresactivos->z1 = $z;
+
+        $erroresactivos->save();
+
+    }   
+    
+    
+    public function cambioc2($x,$y,$z){
+               $erroresactivos = errors::find(1);
+        $erroresactivos->x2 = $x;
+        $erroresactivos->y2 = $y;
+                $erroresactivos->z2 = $z;
+
+                $erroresactivos->save();
+
+    }       
+    
+    public function cambioc3($x,$y,$z){
+                       $erroresactivos = errors::find(1);
+        $erroresactivos->x3 = $x;
+        $erroresactivos->y3 = $y;
+                $erroresactivos->z3 = $z;
+
+                $erroresactivos->save();
+        
+    }    
+    
+    public function cambioc4($x,$y,$z){
+                       $erroresactivos = errors::find(1);
+        $erroresactivos->x4 = $x;
+        $erroresactivos->y4 = $y;
+                $erroresactivos->z4 = $z;
+
+                $erroresactivos->save();
+        
+    } 
+    
+    public function cambioc5($x,$y,$z){
+                       $erroresactivos = errors::find(1);
+        $erroresactivos->x5 = $x;
+        $erroresactivos->y5 = $y;
+                $erroresactivos->z5 = $z;
+
+                $erroresactivos->save();
+        
+    } 
+    
+    public function cambioc6($x,$y,$z){
+                       $erroresactivos = errors::find(1);
+        $erroresactivos->x6 = $x;
+        $erroresactivos->y6 = $y;
+                $erroresactivos->z6 = $z;
+
+                $erroresactivos->save();
+        
+    } 
     
     public function cambioestadoarduino3($I1,$I2,$I5,$I10,$I11,$I32,$I33,$I34,$I35,$I40,$I42,$I43,$O36,$O37,$O38,$O39,$O44,$O45,$O46,$I48,$I49,$I50,$I51,$I52,$I53,$I54,$I55,$I56,$I57,$I58,$I59,$I60,$I61,$I62,$I63,$O48,$O49,$O50,$O51,$O52,$O53,$O54,$O55,$O56,$I64,$I65,$I66,$I67,$I68,$I69,$I70,$I71,$I72,$I82,$O338)
     {
