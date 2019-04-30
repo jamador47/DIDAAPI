@@ -150,6 +150,7 @@ if($errorid == "" && $estado == ){
 
                         $errores->z1 = 0;
             $errores->alarmatiny = 0;
+            $errores->estadoerror = 0;
             
             $errores->save();
 $this->backuperrores($errores);
@@ -185,7 +186,7 @@ $this->backuperrores($errores);
     $backup->z4 = $errores->z4;
     $backup->z5 = $errores->z5;
     $backup->z6 = $errores->z6;
-            
+     $backup->estadoerror = $errores->estadoerror;       
             $backup->save();
 
 
@@ -279,9 +280,9 @@ $this->backuperrores($errores);
 if(intval($inputs[36]) >= 900){
     
     if (!($erroresactivos->dx1)){
- $pg = file_get_contents('192.168.0.83/arduino/digital/47/1');
+ $pg = file_get_contents('http://192.168.0.83/arduino/digital/47/1');
     sleep(2);
-     $pg = file_get_contents('192.168.0.83/arduino/digital/47/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/47/0');
         $erroresactivos->dx1 = 1;
         $erroresactivos->save();
 
@@ -346,18 +347,18 @@ if(intval($inputs[36]) >= 900){
   if(intval($inputs[39]) >= 900){
     
     if (!($erroresactivos->sx2)){
- $pg = file_get_contents('192.168.0.83/arduino/digital/44/1');
+ $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1');
     sleep(2);
-     $pg = file_get_contents('192.168.0.83/arduino/digital/44/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/0');
         $erroresactivos->sx2 = 1;
         $erroresactivos->save();
 
     }
     else{
         
-        $pg = file_get_contents('192.168.0.83/arduino/digital/48/1');
+        $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/1');
     sleep(2);
-     $pg = file_get_contents('192.168.0.83/arduino/digital/48/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/0');
                $erroresactivos->sx2 = 0;
         $erroresactivos->save();
     }
@@ -519,6 +520,14 @@ $outputs[56]=$O56;
             $erroresactivos->save(); 
                 $this->backuperrores($erroresactivos);
 
+        
+        
+        
+        if(intval($inputs[5]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+
+    
+}
         
         // Procesos de emergencia
         
@@ -1005,11 +1014,11 @@ if($errorid == "" && $estado == ){
             
             
             //Codigo para mandar pause al tinyG.
-            /*
+            
 $client = new Client("ws://localhost:8989/ws");
 $client->send("version");   
 var_dump($client->receive());
-            */
+            
         
         
     }

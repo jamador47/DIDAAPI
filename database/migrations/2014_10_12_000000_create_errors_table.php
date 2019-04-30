@@ -43,6 +43,7 @@ class CreateErrorsTable extends Migration
             $table->float('x6', 8, 4);
             $table->float('y6', 8, 4);
             $table->boolean('alarmatiny');
+              $table->boolean('estadoerror');
 
             
             /*
