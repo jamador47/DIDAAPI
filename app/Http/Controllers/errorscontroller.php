@@ -155,7 +155,7 @@ if($errorid == "" && $estado == ){
             $errores->save();
 $this->backuperrores($errores);
 
-        }
+        }}
         
         public function backuperrores($errores){
             
@@ -1009,16 +1009,16 @@ if($errorid == "" && $estado == ){
     {
         $erroresactivos = errors::find(1);
         $erroresactivos = $erroresactivos;
-    return $erroresactivos;
+   // return $erroresactivos;
       
             
             
             //Codigo para mandar pause al tinyG.
-            
+ /*           
 $client = new Client("ws://localhost:8989/ws");
-$client->send("version");   
+$client->send("send ttyUSB0 !");   
 var_dump($client->receive());
-            
+            */
         
         
     }
