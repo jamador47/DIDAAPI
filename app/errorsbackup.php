@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class errors extends Authenticatable
+class errorsbackup extends Authenticatable
 {
     use Notifiable;
 
@@ -63,7 +63,7 @@ class errors extends Authenticatable
 
         
     ];
-     public $table = "errors";
+     public $table = "errorsbackup";
 
 
 }

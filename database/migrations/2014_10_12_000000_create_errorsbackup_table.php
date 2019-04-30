@@ -4,16 +4,16 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateErrorsTable extends Migration
+class CreateErrorsbackupTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *O
      * @return void
      */
     public function up()
     {
-        Schema::create('errors', function (Blueprint $table) {
+        Schema::create('errorsbackup', function (Blueprint $table) {
             $table->increments('id');
            
             $table->json('O');
@@ -84,6 +84,6 @@ class CreateErrorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('errors');
+        Schema::dropIfExists('errorsbackup');
     }
 }

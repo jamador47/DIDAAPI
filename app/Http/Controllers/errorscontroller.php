@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\errors;
+use App\errorsbackup;
+
 use WebSocket\Client;
 
 class errorscontroller extends Controller
@@ -147,17 +149,53 @@ if($errorid == "" && $estado == ){
                         $errores->z2 = 0;
 
                         $errores->z1 = 0;
-
+            $errores->alarmatiny = 0;
             
             $errores->save();
-
+$this->backuperrores($errores);
 
         }
         
+        public function backuperrores($errores){
+            
+            
+        $backup =  new errorsbackup;
+            $backup->I = $errores->I;
+            $backup->O = $errores->O;
+            $backup->alarmatiny = $errores->alarmatiny;
+    $backup->dx1 = $errores->dx1;
+                $backup->dx2 = $errores->dx2;
+    $backup->sx1 = $errores->sx1;
+    $backup->sx2 = $errores->sx2;
+    $backup->x1 = $errores->x1;
+    $backup->x2 = $errores->x2;
+    $backup->x3 = $errores->x3;
+    $backup->x4 = $errores->x4;
+    $backup->x5 = $errores->x5;
+    $backup->x6 = $errores->x6;
+    $backup->y1 = $errores->y1;
+    $backup->y2 = $errores->y2;
+    $backup->y3 = $errores->y3;
+    $backup->y4 = $errores->y4;
+    $backup->y5 = $errores->y5;
+    $backup->y6 = $errores->y6;
+    $backup->z1 = $errores->z1;
+    $backup->z2 = $errores->z2;
+    $backup->z3 = $errores->z3;
+    $backup->z4 = $errores->z4;
+    $backup->z5 = $errores->z5;
+    $backup->z6 = $errores->z6;
+            
+            $backup->save();
+
+
+
+
+            
+        }
         
         
-        
-    }
+    
     
     public function cambioestadoarduino2($O343,$O345,$O344,$I4,$I8,$I14,$O0,$O4,$O12,$I16,$I17,$I18,$I19,$I21,$I22,$I23,$I24,$I27,$I28,$I29,$I30,$I31,$O16,$O17,$O19,$O20,$O21,$O22,$O28,$O29,$O30,$O31,$I36,$I37,$I38,$I39,$I41,$O57,$O58,$O59,$O60,$O61,$O62,$I73,$I74,$I78,$I79,$I80,$I81,$I83,$I84,$I85,$I86,$I87)
     {
@@ -228,7 +266,8 @@ if($errorid == "" && $estado == ){
                         $outputs[62]=$O62;
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+        $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -339,6 +378,8 @@ if(intval($inputs[36]) >= 900){
         $erroresactivos->z1 = $z;
 
         $erroresactivos->save();
+                $this->backuperrores($erroresactivos);
+
 
     }   
     
@@ -350,6 +391,8 @@ if(intval($inputs[36]) >= 900){
                 $erroresactivos->z2 = $z;
 
                 $erroresactivos->save();
+                $this->backuperrores($erroresactivos);
+
 
     }       
     
@@ -360,6 +403,8 @@ if(intval($inputs[36]) >= 900){
                 $erroresactivos->z3 = $z;
 
                 $erroresactivos->save();
+                $this->backuperrores($erroresactivos);
+
         
     }    
     
@@ -370,6 +415,8 @@ if(intval($inputs[36]) >= 900){
                 $erroresactivos->z4 = $z;
 
                 $erroresactivos->save();
+                $this->backuperrores($erroresactivos);
+
         
     } 
     
@@ -380,6 +427,8 @@ if(intval($inputs[36]) >= 900){
                 $erroresactivos->z5 = $z;
 
                 $erroresactivos->save();
+                $this->backuperrores($erroresactivos);
+
         
     } 
     
@@ -390,6 +439,8 @@ if(intval($inputs[36]) >= 900){
                 $erroresactivos->z6 = $z;
 
                 $erroresactivos->save();
+                $this->backuperrores($erroresactivos);
+
         
     } 
     
@@ -465,7 +516,9 @@ $outputs[56]=$O56;
 
   
                          $erroresactivos->O = $outputs;
-            $erroresactivos->save();  
+            $erroresactivos->save(); 
+                $this->backuperrores($erroresactivos);
+
         
         // Procesos de emergencia
         
@@ -533,7 +586,8 @@ $outputs[281]=$O281;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+                $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -613,7 +667,8 @@ $outputs[331]=$O331;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+                $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -681,7 +736,8 @@ $outputs[96]=$O96;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+                $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -748,7 +804,8 @@ $outputs[99]=$O99;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+                $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -834,7 +891,8 @@ $outputs[341]=$O341;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+                $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -915,7 +973,8 @@ $outputs[342]=$O342;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        
+                $this->backuperrores($erroresactivos);
+
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
