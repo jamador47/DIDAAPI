@@ -151,7 +151,7 @@ if($errorid == "" && $estado == ){
                         $errores->z1 = 0;
             $errores->alarmatiny = 0;
             $errores->estadoerror = 0;
-            
+             $errores->encoder = 0;
             $errores->save();
 $this->backuperrores($errores);
 
@@ -186,7 +186,8 @@ $this->backuperrores($errores);
     $backup->z4 = $errores->z4;
     $backup->z5 = $errores->z5;
     $backup->z6 = $errores->z6;
-     $backup->estadoerror = $errores->estadoerror;       
+     $backup->estadoerror = $errores->estadoerror;   
+                 $backup->encoder = $errores->encoder;  
             $backup->save();
 
 
@@ -364,7 +365,99 @@ if(intval($inputs[36]) >= 900){
     }
 }      
       
-      
+        if(intval($inputs[39]) >= 900){
+    
+    if (!($erroresactivos->sx2)){
+ $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/0');
+        $erroresactivos->sx2 = 1;
+        $erroresactivos->save();
+
+    }
+    else{
+        
+        $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/1');
+    sleep(2);
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/0');
+               $erroresactivos->sx2 = 0;
+        $erroresactivos->save();
+    }
+}   
+        
+        
+        if(intval($inputs[21]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        else{
+             $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
+            
+        }
+        
+        
+        if(intval($inputs[18]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+    
+        
+               if(intval($inputs[31]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+     
+               if(intval($inputs[30]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        
+        
+          
+               if(intval($inputs[29]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        
+        
+               if(intval($inputs[28]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        
+        
+               if(intval($inputs[27]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        
+               if(intval($inputs[22]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        
+               if(intval($inputs[8]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
         // En caso de que no sea el primer error 
                      
                    
@@ -525,10 +618,38 @@ $outputs[56]=$O56;
         
         if(intval($inputs[5]) == 0){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
-
-    
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+        else{
+             $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
+            
+        }
+        
+                if(intval($inputs[10]) == 0){
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+                 if(intval($inputs[11]) == 0){
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+                if(intval($inputs[1]) == 0){
+          $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
 }
         
+              if(intval($inputs[2]) == 0){
+          $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -902,6 +1023,77 @@ $outputs[341]=$O341;
             $erroresactivos->save();  
                 $this->backuperrores($erroresactivos);
 
+          
+          
+               if(intval($inputs[354]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+              if(intval($inputs[326]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+              if(intval($inputs[370]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+              if(intval($inputs[407]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+              if(intval($inputs[426]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+          
+                      if(intval($inputs[353]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+                if(intval($inputs[328]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+                  if(intval($inputs[368]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+          
+                          if(intval($inputs[387]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+                   if(intval($inputs[405]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+          
+                   if(intval($inputs[424]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -984,6 +1176,66 @@ $outputs[342]=$O342;
             $erroresactivos->save();  
                 $this->backuperrores($erroresactivos);
 
+         
+                            if(intval($inputs[379]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+         
+                    if(intval($inputs[389]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+                 if(intval($inputs[397]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+         
+                 if(intval($inputs[416]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+         
+                 if(intval($inputs[436]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+         
+                 if(intval($inputs[341]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+               if(intval($inputs[378]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+         if(intval($inputs[434]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+         
+              if(intval($inputs[396]) <= 10){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 

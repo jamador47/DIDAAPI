@@ -23,7 +23,7 @@ class errorsbackup extends Authenticatable
         'y4','y5','y6',
         'z1',
         'z2','z3',
-        'z4','z5','z6','alarmatiny','estadoerror'
+        'z4','z5','z6','alarmatiny','estadoerror','encoder'
     ];
     
     protected $casts = [
@@ -34,7 +34,7 @@ class errorsbackup extends Authenticatable
         'sx1' => 'boolean',
         'sx2' => 'boolean',
         'alarmatiny' => 'boolean',
-                'estadoerror' => 'boolean',
+                'estadoerror' => 'boolean', 'encoder' => 'boolean',
 
         'x1' => 'float',
                 'x2' => 'float',
