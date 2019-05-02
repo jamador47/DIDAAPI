@@ -29,8 +29,8 @@ Route::get('/api/arduino2/{O343}&{O345}&{O344}&{I4}&{I8}&{I14}&{O0}&{O4}&{O12}&{
 
 Route::get('/api/arduino3/{I1}&{I2}&{I5}&{I10}&{I11}&{I32}&{I33}&{I34}&{I35}&{I40}&{I42}&{I43}&{O36}&{O37}&{O38}&{O39}&{O44}&{O45}&{O46}&{I48}&{I49}&{I50}&{I51}&{I52}&{I53}&{I54}&{I55}&{I56}&{I57}&{I58}&{I59}&{I60}&{I61}&{I62}&{I63}&{O48}&{O49}&{O50}&{O51}&{O52}&{O53}&{O54}&{O55}&{O56}&{I64}&{I65}&{I66}&{I67}&{I68}&{I69}&{I70}&{I71}&{I72}&{I82}&{O338}', [
 'as' => 'cambio.estado.arduino3',
-    'uses' => 'errorscontroller@cambioestadoarduino3'],
-          'middleware' => 'cors',);
+    'uses' => 'errorscontroller@cambioestadoarduino3',
+          'middleware' => 'cors',]);
 
 Route::get('/api/arduino4/{O281}&{O280}&{O279}&{O278}&{O277}&{O276}&{O275}&{I274}&{I273}&{I272}&{O270}&{O269}&{O268}&{O267}&{O266}&{O265}&{O264}&{O263}&{I262}&{I261}&{I260}&{I259}&{I258}&{I257}&{I256}', [
 'as' => 'cambio.estado.arduino4',
