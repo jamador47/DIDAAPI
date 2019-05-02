@@ -1261,7 +1261,7 @@ if($errorid == "" && $estado == ){
     {
         $erroresactivos = errors::find(1);
         $erroresactivos = $erroresactivos;
-   // return $erroresactivos;
+    return $erroresactivos;
       
             
             
