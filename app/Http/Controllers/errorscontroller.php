@@ -154,7 +154,7 @@ if($errorid == "" && $estado == ){
              $errores->encoder = 0;
             $errores->save();
 $this->backuperrores($errores);
-
+return "Bien";
         }}
         
         public function backuperrores($errores){
@@ -163,7 +163,7 @@ $this->backuperrores($errores);
         $backup =  new errorsbackup;
             $backup->I = $errores->I;
             $backup->O = $errores->O;
-            $backup->alarmatiny = $errores->alarmatiny;
+            $backup->alarmatiny = 0;
     $backup->dx1 = $errores->dx1;
                 $backup->dx2 = $errores->dx2;
     $backup->sx1 = $errores->sx1;
@@ -186,10 +186,9 @@ $this->backuperrores($errores);
     $backup->z4 = $errores->z4;
     $backup->z5 = $errores->z5;
     $backup->z6 = $errores->z6;
-     $backup->estadoerror = $errores->estadoerror;   
+     $backup->estadoerror = 0;   
                  $backup->encoder = $errores->encoder;  
             $backup->save();
-
 
 
 
@@ -1033,7 +1032,7 @@ $outputs[341]=$O341;
                 $this->backuperrores($erroresactivos);
 
           
-          
+       /*   
                if(intval($inputs[354]) <= 10){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
@@ -1102,7 +1101,7 @@ $client->receive();
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send ttyUSB0 !");   
 $client->receive();
-}
+}*/
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
@@ -1185,7 +1184,7 @@ $outputs[342]=$O342;
             $erroresactivos->save();  
                 $this->backuperrores($erroresactivos);
 
-         
+         /*
                             if(intval($inputs[379]) == 0){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
@@ -1245,6 +1244,8 @@ $client->receive();
 $client->send("send ttyUSB0 !");   
 $client->receive();
 }
+         */
+         return "Bien";
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
