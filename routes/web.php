@@ -37,27 +37,27 @@ Route::get('/api/arduino4/{O281}/{O280}/{O279}/{O278}/{O277}/{O276}/{O275}/{I274
     'uses' => 'errorscontroller@cambioestadoarduino4',
 'middleware' => 'cors',]);
 
-Route::get('/api/c1/{x}/{y}/{z}', [
+Route::get('/api/c1/{x}&{y}&{z}', [
 'as' => 'cambio.estado.c1',
     'uses' => 'errorscontroller@cambioc1',
 'middleware' => 'cors',]);
-Route::get('/api/c2/{x}/{y}/{z}', [
+Route::get('/api/c2/{x}&{y}&{z}', [
 'as' => 'cambio.estado.c2',
     'uses' => 'errorscontroller@cambioc2',
 'middleware' => 'cors',]);
-Route::get('/api/c3/{x}/{y}/{z}', [
+Route::get('/api/c3/{x}&{y}&{z}', [
 'as' => 'cambio.estado.c3',
     'uses' => 'errorscontroller@cambioc3',
 'middleware' => 'cors',]);
-Route::get('/api/c4/{x}/{y}/{z}', [
+Route::get('/api/c4/{x}&{y}&{z}', [
 'as' => 'cambio.estado.c4',
     'uses' => 'errorscontroller@cambioc4',
 'middleware' => 'cors',]);
-Route::get('/api/c5/{x}/{y}/{z}', [
+Route::get('/api/c5/{x}&{y}&{z}', [
 'as' => 'cambio.estado.c5',
     'uses' => 'errorscontroller@cambioc5',
 'middleware' => 'cors',]);
-Route::get('/api/c6/{x}/{y}/{z}', [
+Route::get('/api/c6/{x}&{y}&{z}', [
 'as' => 'cambio.estado.c6',
     'uses' => 'errorscontroller@cambioc6',
 'middleware' => 'cors',]);
