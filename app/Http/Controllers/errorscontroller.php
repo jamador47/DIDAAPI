@@ -1032,7 +1032,7 @@ $outputs[341]=$O341;
                 $this->backuperrores($erroresactivos);
 
           
-          
+       /*   
                if(intval($inputs[354]) <= 10){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
@@ -1101,7 +1101,7 @@ $client->receive();
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send ttyUSB0 !");   
 $client->receive();
-}
+}*/
         // Procesos de emergencia
         
 /*-- Plantilla para nuevos errores urgentes -- 
