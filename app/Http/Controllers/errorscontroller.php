@@ -398,6 +398,15 @@ $client->receive();
         }
         
         
+                if(intval($inputs[22]) == 0){
+ $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
+            $client = new Client("ws://localhost:8989/ws");
+$client->send("send ttyUSB0 !");   
+$client->receive();
+}
+   
+        
+        
         if(intval($inputs[18]) == 0){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");

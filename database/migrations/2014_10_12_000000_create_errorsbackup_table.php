@@ -16,8 +16,8 @@ class CreateErrorsbackupTable extends Migration
         Schema::create('errorsbackup', function (Blueprint $table) {
             $table->increments('id');
            
-            $table->json('O');
-            $table->json('I');
+            $table->text('O');
+            $table->text('I');
             $table->boolean('dx1');
             $table->boolean('dx2');
             $table->boolean('sx1');
