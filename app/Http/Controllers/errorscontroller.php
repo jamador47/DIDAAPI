@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\errors;
+use App\errors2;
 use App\errorsbackup;
 
 use WebSocket\Client;
@@ -36,7 +36,7 @@ class errorscontroller extends Controller
         $numerror = (int)$matches[0][0];
         
         
-        var_dump($errorid. "= ".$estado);
+        //var_dump($errorid. "= ".$estado);
         
         
         
@@ -58,7 +58,8 @@ if($errorid == "" && $estado == ){
         
 // Guardar en la Base de datos
    
-        $erroresactivos = errors::find(1);
+        $erroresactivos = errors2::find(1);
+
         // En caso de que no sea el primer error 
         if(!empty($erroresactivos)){
             
@@ -102,7 +103,7 @@ if($errorid == "" && $estado == ){
                 $inputs[$i]= 0  ;   
                 
             }
-            $errores = new errors;
+            $errores = new errors2;
             
              switch ( $tipoerror){
                      
@@ -147,12 +148,13 @@ if($errorid == "" && $estado == ){
                         $errores->z3 = 0;
 
                         $errores->z2 = 0;
-
+ 
                         $errores->z1 = 0;
             $errores->alarmatiny = 0;
             $errores->estadoerror = 0;
              $errores->encoder = 0;
-            $errores->save();
+var_dump($errores);            
+$errores->save();
 $this->backuperrores($errores);
 return "Bien";
         }}
@@ -203,7 +205,7 @@ return "Bien";
         
         
         
-            $erroresactivos = errors::find(1);
+            $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
                      $inputs[14]=$I14;
                         $inputs[16]=$I16;
@@ -385,7 +387,9 @@ if(intval($inputs[36]) >= 900){
 }   
         
         
-        if(intval($inputs[21]) == 0){
+   /*   ISRA REVISAR.
+
+  if(intval($inputs[21]) == 0){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send ttyUSB0 !");   
@@ -394,7 +398,7 @@ $client->receive();
         else{
              $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
             
-        }
+        }*/
         
         
                 if(intval($inputs[22]) == 0){
@@ -406,12 +410,17 @@ $client->receive();
    
         
         
-        if(intval($inputs[18]) == 0){
+        if(intval($inputs[18]) == 1){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send ttyUSB0 !");   
 $client->receive();
 }
+
+
+//AGREGAR A ALARMAS
+
+ 
     
         
                if(intval($inputs[31]) == 0){
@@ -421,6 +430,7 @@ $client->send("send ttyUSB0 !");
 $client->receive();
 }
      
+
                if(intval($inputs[30]) == 0){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
@@ -474,7 +484,7 @@ $client->receive();
     
     
     public function cambioc1($x,$y,$z){
-        $erroresactivos = errors::find(1);
+        $erroresactivos = errors2::find(1);
         $erroresactivos->x1 = $x;
         $erroresactivos->y1 = $y;
         $erroresactivos->z1 = $z;
@@ -487,7 +497,7 @@ $client->receive();
     
     
     public function cambioc2($x,$y,$z){
-               $erroresactivos = errors::find(1);
+               $erroresactivos = errors2::find(1);
         $erroresactivos->x2 = $x;
         $erroresactivos->y2 = $y;
                 $erroresactivos->z2 = $z;
@@ -499,7 +509,7 @@ $client->receive();
     }       
     
     public function cambioc3($x,$y,$z){
-                       $erroresactivos = errors::find(1);
+                       $erroresactivos = errors2::find(1);
         $erroresactivos->x3 = $x;
         $erroresactivos->y3 = $y;
                 $erroresactivos->z3 = $z;
@@ -511,7 +521,7 @@ $client->receive();
     }    
     
     public function cambioc4($x,$y,$z){
-                       $erroresactivos = errors::find(1);
+                       $erroresactivos = errors2::find(1);
         $erroresactivos->x4 = $x;
         $erroresactivos->y4 = $y;
                 $erroresactivos->z4 = $z;
@@ -523,7 +533,7 @@ $client->receive();
     } 
     
     public function cambioc5($x,$y,$z){
-                       $erroresactivos = errors::find(1);
+                       $erroresactivos = errors2::find(1);
         $erroresactivos->x5 = $x;
         $erroresactivos->y5 = $y;
                 $erroresactivos->z5 = $z;
@@ -535,7 +545,7 @@ $client->receive();
     } 
     
     public function cambioc6($x,$y,$z){
-                       $erroresactivos = errors::find(1);
+                       $erroresactivos = errors2::find(1);
         $erroresactivos->x6 = $x;
         $erroresactivos->y6 = $y;
                 $erroresactivos->z6 = $z;
@@ -551,7 +561,7 @@ $client->receive();
         
         
         
-            $erroresactivos = errors::find(1);
+            $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
                     $inputs[1]=$I1;
 $inputs[10]=$I10;
@@ -685,7 +695,7 @@ if($errorid == "" && $estado == ){
         
         
         
-            $erroresactivos = errors::find(1);
+            $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
                    $inputs[256]=$i256;
 $inputs[257]=$i257;
@@ -751,7 +761,7 @@ if($errorid == "" && $estado == ){
         
         
         
-            $erroresactivos = errors::find(1);
+            $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
                   $inputs[304]=$I304;
 $inputs[305]=$I305;
@@ -833,7 +843,7 @@ if($errorid == "" && $estado == ){
         
         
         
-            $erroresactivos = errors::find(1);
+            $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
                $inputs[107]=$I107;
 $inputs[128]=$I128;
@@ -901,7 +911,7 @@ if($errorid == "" && $estado == ){
         
         
         
-            $erroresactivos = errors::find(1);
+            $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
               $inputs[100]=$I100;
 $inputs[101]=$I101;
@@ -967,7 +977,7 @@ if($errorid == "" && $estado == ){
     
       public function cambioestadoarduino8($I351,$I352,$I353,$I354,$I360,$I326,$I327,$I328,$I332,$I333,$I334,$I335,$I336,$I361,$I362,$I363,$I364,$I365,$I368,$I369,$I370,$O337,$I380,$I381,$I382,$I383,$I384,$I387,$I388,$I398,$I399,$I400,$I401,$I402,$I405,$I406,$I407,$O341,$I417,$I418,$I419,$I420,$I421,$I424,$I425,$I426)
     {
-              $erroresactivos = errors::find(1);
+              $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
               $inputs[326]=$I326;
 $inputs[327]=$I327;
@@ -1032,7 +1042,7 @@ $outputs[341]=$O341;
                 $this->backuperrores($erroresactivos);
 
           
-          
+          /*
                if(intval($inputs[354]) <= 10){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
@@ -1110,8 +1120,8 @@ if($errorid == "" && $estado == ){
  $pg = file_get_contents('http://URL');
         
     }
-    
- -------------------------------   */
+    */
+ 
         
 // Guardar en la Base de datos
    
@@ -1124,7 +1134,7 @@ if($errorid == "" && $estado == ){
     
      public function cambioestadoarduino9($I338,$I341,$I345,$I357,$I358,$I359,$O333,$O332,$O335,$O336,$I372,$I373,$I374,$I375,$I378,$I379,$I389,$I390,$I391,$I392,$I393,$I396,$I397,$O339,$O340,$I408,$I409,$I410,$I411,$I412,$I415,$I416,$O342,$I427,$I428,$I429,$I430,$I431,$I434,$I435,$I436)
     {
-              $erroresactivos = errors::find(1);
+              $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
               $inputs[338]=$I338;
 $inputs[341]=$I341;
@@ -1184,13 +1194,15 @@ $outputs[342]=$O342;
             $erroresactivos->save();  
                 $this->backuperrores($erroresactivos);
 
-         /*
-                            if(intval($inputs[379]) == 0){
+         
+                 /*           if(intval($inputs[379]) == 0){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send ttyUSB0 !");   
 $client->receive();
-}
+}*/
+
+/*
          
                     if(intval($inputs[389]) <= 10){
  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');
@@ -1269,7 +1281,7 @@ if($errorid == "" && $estado == ){
     
         public function mostrarestados()
     {
-        $erroresactivos = errors::find(1);
+        $erroresactivos = errors2::find(1);
         $erroresactivos = $erroresactivos;
     return $erroresactivos;
       

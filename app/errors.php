@@ -26,45 +26,7 @@ class errors extends Authenticatable
         'z4','z5','z6','alarmatiny','estadoerror','encoder'
     ];
     
-    protected $casts = [
-        'O' => 'array',
-        'I' => 'array',
-        'dx1' => 'boolean',
-                'dx2' => 'boolean',
-        'sx1' => 'boolean',
-        'sx2' => 'boolean',
-        'alarmatiny' => 'boolean',
-                        'estadoerror' => 'boolean',
-'encoder' => 'boolean',
-        'x1' => 'float',
-                'x2' => 'float',
-
-                'x3' => 'float',
-
-                'x4' => 'float',
-
-                'x5' => 'float',
-
-                'x6' => 'float',
-
-                'y1' => 'float',
-                        'y2' => 'float',
-                'y3' => 'float',
-                'y4' => 'float',
-                'y5' => 'float',
-                'y6' => 'float',         
-        'z1' => 'float',
-                        'z2' => 'float',
-                'z3' => 'float',
-                'z4' => 'float',
-                'z5' => 'float',
-                'z6' => 'float'
-
-
-        
-
-        
-    ];
+   
      public $table = "errors";
 
 
