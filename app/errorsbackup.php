@@ -21,6 +21,9 @@ class errorsbackup extends Authenticatable
         'x4','x5','x6','y1',
         'y2','y3',
         'y4','y5','y6',
+        'paletasmesas',
+        'sacarmesaa',
+        'sacarmesay',
         'z1',
         'z2','z3',
         'z4','z5','z6','alarmatiny','estadoerror','encoder'
@@ -33,6 +36,10 @@ class errorsbackup extends Authenticatable
                 'dx2' => 'boolean',
         'sx1' => 'boolean',
         'sx2' => 'boolean',
+        'sacarmesay' => 'boolean',
+        'sacarmesaa' => 'boolean',
+
+        'paletasmesas' => 'boolean',
         'alarmatiny' => 'boolean',
                 'estadoerror' => 'boolean', 'encoder' => 'boolean',
 

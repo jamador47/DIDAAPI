@@ -16,7 +16,7 @@ class errors2 extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'O', 'I','dx1','dx2','sx1','sx2','x1',
+        'O', 'I','dx1','dx2','sx1','sx2','x1','paletasmesas',
         'x2','x3',
         'x4','x5','x6','y1',
         'y2','y3',
@@ -31,6 +31,7 @@ class errors2 extends Authenticatable
         'I' => 'array',
         'dx1' => 'boolean',
                 'dx2' => 'boolean',
+                'paletasmesas' => 'boolean',
         'sx1' => 'boolean',
         'sx2' => 'boolean',
         'alarmatiny' => 'boolean',

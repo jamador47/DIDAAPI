@@ -25,7 +25,9 @@ class CreateErrorsbackupTable extends Migration
             $table->float('x1', 8, 4);
             $table->float('y1', 8, 4);
             $table->float('z1', 8, 4);
-
+            $table->boolean('sacarmesaa');
+            $table->boolean('sacarmesay');
+            $table->boolean('paletasmesas');
             $table->float('x2', 8, 4);
             $table->float('y2', 8, 4);
                         $table->float('z2', 8, 4);
