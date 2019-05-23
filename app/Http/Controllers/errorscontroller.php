@@ -10,8 +10,6 @@ use WebSocket\Client;
 
 class errorscontroller extends Controller
 {
-
-  
     /**
      * Create a new controller instance.
      *
@@ -309,8 +307,8 @@ $backup->paletasmesas = $errores->paletasmesas;
     
  ------------DX1-------------------   */
         
-if(intval($inputs[36]) >= 900 && $presiondx1 == 0){
-        $presiondx1 =1;
+if(intval($inputs[36]) >= 900){
+    
     if (!($erroresactivos->dx1)){
  $pg = file_get_contents('http://192.168.0.83/arduino/digital/47/1');
 
@@ -346,13 +344,10 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/0');
         }
     }
 }
-else{
-        $presiondx1 = 0;
-}
         
 /************-----------------DX2------------------***********/
-  if(intval($inputs[37]) >= 900 && $presiondx2 == 0){
-        $presionsdx2 =1;
+  if(intval($inputs[37]) >= 900){
+    
     if (!($erroresactivos->dx2)){
  $pg = file_get_contents('http://192.168.0.83/arduino/digital/12/1');
 
@@ -385,14 +380,12 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
         }
     }
 }      
-else{
-        $presiondx2 = 0;
-}
+        
         
         
         /************-----------------SX1------------------***********/
-  if(intval($inputs[38]) >= 900 && $presionsx1 == 0){
-        $presionsx1 =1;
+  if(intval($inputs[38]) >= 900){
+    
     if (!($erroresactivos->sx1)){
  $pg = file_get_contents('http://192.168.0.82/arduino/digital/33/1');
  
@@ -426,17 +419,14 @@ else{
         }
     }
 }      
-else{
-        $presionsx1 = 0;
-}
+        
         
         
         /************-----------------SX2------------------***********/
-  if(intval($inputs[39]) >= 900 && $presionsx2 == 0){
+  if(intval($inputs[39]) >= 900){
     
-        $presionsx2 =1;
     if (!($erroresactivos->sx2)){
-        $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/1');
+ $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/1');
    
      $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/0');
         $erroresactivos->sx2 = 1;
@@ -466,11 +456,8 @@ else{
         }
     }
 }      
-else{
-        $presionsx2 = 0;
-}
     
-
+        
         
    /*   ISRA REVISAR.
 
