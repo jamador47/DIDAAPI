@@ -426,9 +426,9 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
   if(intval($inputs[39]) >= 900){
     
     if (!($erroresactivos->sx2)){
- $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1');
+ $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/1');
    
-     $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/0');
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/0');
         $erroresactivos->sx2 = 1;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
