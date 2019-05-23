@@ -16,7 +16,8 @@ class errors extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'O', 'I','dx1','dx2','sx1','sx2','x1','paletasmesaa',
+        'O', 'I','dx1','dx2','sx1','sx2','x1','paletasmesaa','presionsx1','presionsx2'
+        ,'presiondx1','presiondx2',
         'x2','x3',
         'x4','x5','x6','y1',
         'y2','y3',
