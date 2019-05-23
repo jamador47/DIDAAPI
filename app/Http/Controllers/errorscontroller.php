@@ -201,7 +201,7 @@ $backup->paletasmesas = $errores->paletasmesas;
 
 
 
-                 if($backup != NULL){
+                 if($ultimobackup != NULL){
                  if ($backup->I != $ultimobackup->I || $backup->O != $ultimobackup->O 
                  || $backup->dx1 != $ultimobackup->dx1  || $backup->dx2 != $ultimobackup->dx2
                  || $backup->sx1 != $ultimobackup->sx1 || $backup->sx2 != $ultimobackup->sx2
