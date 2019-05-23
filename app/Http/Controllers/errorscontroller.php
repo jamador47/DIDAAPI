@@ -325,8 +325,7 @@ $backup->paletasmesas = $errores->paletasmesas;
     
  ------------DX1-------------------   */
         
-if(intval($inputs[36]) >= 900 ){
-    if($erroresactivos->presiondx1 == 0){
+if(intval($inputs[36]) >= 900 && $erroresactivos->presiondx1 == 0){
         $erroresactivos->presiondx1 =1;
         $erroresactivos->save();
     if (!($erroresactivos->dx1)){
@@ -363,15 +362,14 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/0');
                 
         }
     }
-}}
+}
 else{
         $erroresactivos->presiondx1 = 0;
         $erroresactivos->save();
 }
         
 /************-----------------DX2------------------***********/
-  if(intval($inputs[37]) >= 900){
-      if ($erroresactivos->presiondx2 == 0){
+  if(intval($inputs[37]) >= 900 && $erroresactivos->presiondx2 == 0){
         $presionsdx2 =1;
         $erroresactivos->save();
     if (!($erroresactivos->dx2)){
@@ -405,7 +403,7 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
                 
         }
     }
-}     } 
+}      
 else{
         $erroresactivos->presiondx2 = 0;
         $erroresactivos->save();
@@ -413,8 +411,7 @@ else{
         
         
         /************-----------------SX1------------------***********/
-  if(intval($inputs[38]) >= 900){
-      if ($erroresactivos->presionsx1 == 0){
+  if(intval($inputs[38]) >= 900 && $erroresactivos->presionsx1 == 0){
         $erroresactivos->presionsx1 =1;
         $erroresactivos->save();
     if (!($erroresactivos->sx1)){
@@ -449,7 +446,7 @@ else{
                 
         }
     }
-} }    
+}      
 else{
         $erroresactivos->presionsx1 = 0;
         $erroresactivos->save();
@@ -457,8 +454,8 @@ else{
         
         
         /************-----------------SX2------------------***********/
-  if(intval($inputs[39]) >= 900){
-    if ( $erroresactivos->presionsx2 == 0){
+  if(intval($inputs[39]) >= 900 && $erroresactivos->presionsx2 == 0){
+    
         $erroresactivos->presionsx2 =1;
         $erroresactivos->save();
     if (!($erroresactivos->sx2)){
@@ -491,7 +488,7 @@ else{
                 
         }
     }
-} }     
+}      
 else{
         $erroresactivos->presionsx2 = 0;
         $erroresactivos->save();
