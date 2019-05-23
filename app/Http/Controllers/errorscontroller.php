@@ -165,7 +165,8 @@ return "Bien";
         
         public function backuperrores($errores){
             
-            
+            $ultimobackup = \DB::table('errorsbackup')->orderBy('id','desc')->first();
+
         $backup =  new errorsbackup;
             $backup->I = $errores->I;
             $backup->O = $errores->O;
@@ -197,8 +198,24 @@ $backup->paletasmesas = $errores->paletasmesas;
     $backup->z6 = $errores->z6;
      $backup->estadoerror = 0;   
                  $backup->encoder = $errores->encoder;  
-            $backup->save();
 
+
+
+                 if ($backup->I != $ultimobackup->I || $backup->O != $ultimobackup->O 
+                 || $backup->dx1 != $ultimobackup->dx1  || $backup->dx2 != $ultimobackup->dx2
+                 || $backup->sx1 != $ultimobackup->sx1 || $backup->sx2 != $ultimobackup->sx2
+                 || $backup->paletasmesas != $ultimobackup->paletasmesas || $backup->sacarmesaa != $ultimobackup->sacarmesaa
+                 || $backup->sacarmesay != $ultimobackup->sacarmesay || $backup->x1 != $ultimobackup->x1
+                 || $backup->x2 != $ultimobackup->x2 || $backup->x3 != $ultimobackup->x3
+                 || $backup->x4 != $ultimobackup->x4 || $backup->x5 != $ultimobackup->x5
+                 || $backup->x6 != $ultimobackup->x6 || $backup->y1 != $ultimobackup->y1
+                 || $backup->y2 != $ultimobackup->y2 || $backup->y3  != $ultimobackup->y3
+                 || $backup->y4 != $ultimobackup->y4 || $backup->y5 != $ultimobackup->y5
+                 || $backup->y6 != $ultimobackup->y6 || $backup->alarmatiny != $ultimobackup->alarmatiny
+                 || $backup->estadoerror != $ultimobackup->estadoerror || $backup->ENCODER != $ultimobackup->ENCODER){
+        
+            $backup->save();
+        }
 
 
             
