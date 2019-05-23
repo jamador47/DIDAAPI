@@ -16,8 +16,7 @@ class errorsbackup extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'O', 'I','dx1','dx2','sx1','sx2','x1','presionsx1','presionsx2'
-        ,'presiondx1','presiondx2',
+        'O', 'I','dx1','dx2','sx1','sx2','x1',
         'x2','x3',
         'x4','x5','x6','y1',
         'y2','y3',
@@ -37,10 +36,6 @@ class errorsbackup extends Authenticatable
                 'dx2' => 'boolean',
         'sx1' => 'boolean',
         'sx2' => 'boolean',
-        'presiondx1' => 'boolean',
-        'presiondx2' => 'boolean',
-'presionsx1' => 'boolean',
-'presionsx2' => 'boolean',
         'sacarmesay' => 'boolean',
         'sacarmesaa' => 'boolean',
 

@@ -12,8 +12,6 @@ class errorscontroller extends Controller
 {
 
   
-
-        
     /**
      * Create a new controller instance.
      *
@@ -136,13 +134,6 @@ if($errorid == "" && $estado == ){
             $errores->y1 = 0;
             $errores->x2 = 0;
             $errores->y2 = 0;
-            $errores->presiondx1 = 0;
-            $errores->presiondx2 = 0;
-
-            $errores->presionsx1 = 0;
-
-            $errores->presionsx2 = 0;
-
             $errores->paletasmesas = 0;
             $errores->sacarmesaa = 0;
             $errores->sacarmesay = 0;
@@ -181,13 +172,6 @@ return "Bien";
         $backup =  new errorsbackup;
             $backup->I = $errores->I;
             $backup->O = $errores->O;
-            $backup->presionsx1 = $errores->presionsx1;
-            $backup->presionsx2 = $errores->presionsx2;
-
-            $backup->presiondx1 = $errores->presiondx1;
-
-            $backup->presiondx2 = $errores->presiondx2;
-
             $backup->alarmatiny = 0;
     $backup->dx1 = $errores->dx1;
                 $backup->dx2 = $errores->dx2;
@@ -325,9 +309,8 @@ $backup->paletasmesas = $errores->paletasmesas;
     
  ------------DX1-------------------   */
         
-if(intval($inputs[36]) >= 900 && $erroresactivos->presiondx1 == 0){
-        $erroresactivos->presiondx1 =1;
-        $erroresactivos->save();
+if(intval($inputs[36]) >= 900 && $presiondx1 == 0){
+        $presiondx1 =1;
     if (!($erroresactivos->dx1)){
  $pg = file_get_contents('http://192.168.0.83/arduino/digital/47/1');
 
@@ -364,14 +347,12 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/0');
     }
 }
 else{
-        $erroresactivos->presiondx1 = 0;
-        $erroresactivos->save();
+        $presiondx1 = 0;
 }
         
 /************-----------------DX2------------------***********/
-  if(intval($inputs[37]) >= 900 && $erroresactivos->presiondx2 == 0){
+  if(intval($inputs[37]) >= 900 && $presiondx2 == 0){
         $presionsdx2 =1;
-        $erroresactivos->save();
     if (!($erroresactivos->dx2)){
  $pg = file_get_contents('http://192.168.0.83/arduino/digital/12/1');
 
@@ -405,15 +386,13 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
     }
 }      
 else{
-        $erroresactivos->presiondx2 = 0;
-        $erroresactivos->save();
+        $presiondx2 = 0;
 }
         
         
         /************-----------------SX1------------------***********/
-  if(intval($inputs[38]) >= 900 && $erroresactivos->presionsx1 == 0){
-        $erroresactivos->presionsx1 =1;
-        $erroresactivos->save();
+  if(intval($inputs[38]) >= 900 && $presionsx1 == 0){
+        $presionsx1 =1;
     if (!($erroresactivos->sx1)){
  $pg = file_get_contents('http://192.168.0.82/arduino/digital/33/1');
  
@@ -448,16 +427,14 @@ else{
     }
 }      
 else{
-        $erroresactivos->presionsx1 = 0;
-        $erroresactivos->save();
+        $presionsx1 = 0;
 }
         
         
         /************-----------------SX2------------------***********/
-  if(intval($inputs[39]) >= 900 && $erroresactivos->presionsx2 == 0){
+  if(intval($inputs[39]) >= 900 && $presionsx2 == 0){
     
-        $erroresactivos->presionsx2 =1;
-        $erroresactivos->save();
+        $presionsx2 =1;
     if (!($erroresactivos->sx2)){
         $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/1');
    
@@ -490,8 +467,7 @@ else{
     }
 }      
 else{
-        $erroresactivos->presionsx2 = 0;
-        $erroresactivos->save();
+        $presionsx2 = 0;
 }
     
 

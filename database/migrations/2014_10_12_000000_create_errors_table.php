@@ -25,10 +25,6 @@ class CreateErrorsTable extends Migration
             $table->boolean('paletasmesas');
             $table->boolean('sacarmesaa');
             $table->boolean('sacarmesay');
-            $table->boolean('presionsx1');
-            $table->boolean('presionsx2');
-            $table->boolean('presiondx1');
-            $table->boolean('presiondx2');
 
             $table->float('x1', 8, 4);
             $table->float('y1', 8, 4);
