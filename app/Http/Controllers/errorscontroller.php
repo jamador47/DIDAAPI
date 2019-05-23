@@ -353,10 +353,9 @@ $pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
                $erroresactivos->dx1 = 0;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
-                sleep(2);
+            
                 $pg = file_get_contents('http://192.168.0.83/arduino/digital/10/0');
                 $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/1');
-sleep(1);
 $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/0');
 
                 
