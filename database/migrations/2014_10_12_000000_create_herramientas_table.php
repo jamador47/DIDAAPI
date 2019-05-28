@@ -14,12 +14,13 @@ class CreateHerramientasTable extends Migration
     public function up()
     {
         Schema::create('herramientas', function (Blueprint $table) {
-            $table->increments('pocket');
-           
+            $table->increments('id');
+            $table->integer('pocket');
             $table->integer('herramienta');
             $table->float('longitud', 5, 2);
             $table->float('diametro', 5, 2);
             $table->boolean('enhusillo');
+            $table->boolean('listocambio');
            
             $table->timestamps();
         });

@@ -21,6 +21,17 @@ Route::get('/api/{errorid}={estado}', [
     'middleware' => 'cors',
 ]);
 
+
+
+// CREAR TABLAS CH
+Route::get('/iniciartablach', [
+    'as' => 'iniciar.ch',
+        'uses' => 'herramientascontroller@creartablas',
+        'middleware' => 'cors',
+    ]);
+    
+
+
 Route::get('/api/arduino2/{O343}/{O345}/{O344}/{I4}/{I8}/{I14}/{O0}/{O4}/{O12}/{I16}/{I17}/{I18}/{I19}/{I21}/{I22}/{I23}/{I24}/{I27}/{I28}/{I29}/{I30}/{I31}/{O16}/{O17}/{O19}/{O20}/{O21}/{O22}/{O28}/{O29}/{O30}/{O31}/{I36}/{I37}/{I38}/{I39}/{I41}/{O57}/{O58}/{O59}/{O60}/{O61}/{O62}/{I73}/{I74}/{I78}/{I79}/{I80}/{I81}/{I83}/{I84}/{I85}/{I86}/{I87}', [
 'as' => 'cambio.estado.arduino2',
     'uses' => 'errorscontroller@cambioestadoarduino2',
