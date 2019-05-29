@@ -511,7 +511,7 @@ $client->receive();
             
         }*/
         
-        
+       /* 
                 if(intval($inputs[22]) == 0){
   $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
@@ -553,7 +553,7 @@ $client->receive();
         
         
           
-               if(intval($inputs[29]) == 0){
+            /*   if(intval($inputs[29]) == 0){
   $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
@@ -576,7 +576,7 @@ $client->send("send /dev/ttyUSB0 !");
 $client->receive();
 }*/
         
-               if(intval($inputs[22]) == 0){
+              /* if(intval($inputs[22]) == 0){
   $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
@@ -590,7 +590,7 @@ $client->send("send /dev/ttyUSB0 !");
 $client->receive();
 }
         // En caso de que no sea el primer error 
-                     
+              */       
                    
              }
     
