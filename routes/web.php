@@ -31,6 +31,20 @@ Route::get('/iniciartablach', [
     ]);
     
 
+    Route::get('/postpos/{a1f1}&{a1f2}&{a1l1}&{a2f1}&{a2f2}&{a2l1}&{a2l2}&{y1f1}&{y1f2}&{y1l1}&{y2f1}&{y2f2}&{y2l1}&{y2l2}', [
+        'as' => 'post.pos',
+            'uses' => 'posicionadorescontroller@update',
+            'middleware' => 'cors',
+        ]);
+
+        Route::get('/getpos', [
+            'as' => 'get.pos',
+                'uses' => 'posicionadorescontroller@getjson',
+                'middleware' => 'cors',
+            ]);
+        
+    
+
 
 Route::get('/api/arduino2/{O343}/{O345}/{O344}/{I4}/{I8}/{I14}/{O0}/{O4}/{O12}/{I16}/{I17}/{I18}/{I19}/{I21}/{I22}/{I23}/{I24}/{I27}/{I28}/{I29}/{I30}/{I31}/{O16}/{O17}/{O19}/{O20}/{O21}/{O22}/{O28}/{O29}/{O30}/{O31}/{I36}/{I37}/{I38}/{I39}/{I41}/{O57}/{O58}/{O59}/{O60}/{O61}/{O62}/{I73}/{I74}/{I78}/{I79}/{I80}/{I81}/{I83}/{I84}/{I85}/{I86}/{I87}', [
 'as' => 'cambio.estado.arduino2',
