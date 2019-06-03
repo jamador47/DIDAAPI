@@ -20,6 +20,7 @@ class CreateHerramientasTable extends Migration
             $table->float('longitud', 5, 2);
             $table->float('diametro', 5, 2);
             $table->boolean('enhusillo');
+            $table->boolean('modoh');
             $table->boolean('listocambio');
            
             $table->timestamps();

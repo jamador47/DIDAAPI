@@ -16,7 +16,7 @@ class herramientas extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'pocket', 'herramienta','longitud','diametro','enhusillo','listocambio'
+        'pocket', 'herramienta','longitud','diametro','enhusillo','listocambio','modoh'
     ];
     
    
