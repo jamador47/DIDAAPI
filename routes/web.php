@@ -49,6 +49,13 @@ Route::get('/iniciartablach', [
                 'uses' => 'posicionadorescontroller@getjson',
                 'middleware' => 'cors',
             ]);
+
+
+            Route::get('/geth', [
+                'as' => 'get.pos',
+                    'uses' => 'herramientascontroller@getjson',
+                    'middleware' => 'cors',
+                ]);
         
     
 
