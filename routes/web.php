@@ -52,7 +52,7 @@ Route::get('/iniciartablach', [
 
 
             Route::get('/geth', [
-                'as' => 'get.pos',
+                'as' => 'get.h',
                     'uses' => 'herramientascontroller@getjson',
                     'middleware' => 'cors',
                 ]);
