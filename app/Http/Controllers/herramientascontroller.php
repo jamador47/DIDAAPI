@@ -164,43 +164,85 @@ class herramientascontroller extends Controller
 
 
         // CAMBIO EN EL MODO SEGUIR HERRAMIENTA
-    public function cambioherramientamodoH(){
+    public function cambioherramientabrazomodoH(){
     // CAMBIAR DATOS COMPLETOS DE POCKET DE LA HERRAMIENTA EN HUSILLO Y LA HERRAMIENTA listacambio. 
-    $herramientalistocambio = \DB::table('herramientas')->where('listocambio', 1 )->first();
-    $herramientahusillo = \DB::table('herramientas')->where('enhusillo', 1 )->first();
+            $herramientalistocambio = \DB::table('herramientas')->where('listocambio', 1 )->first();
+            $herramientahusillo = \DB::table('herramientas')->where('enhusillo', 1 )->first();
+
+            if ($herramientahusillo == NULL){
+                $hlistocambio =  herramientas::find($herramientalistocambio->id);
+
+                $hlistocambio->enhusillo = 1;
+                $hlistocambio->listocambio = 1;
+                $hlistocambio->save();
+            }else{
+            $hlistocambio =  herramientas::find($herramientalistocambio->id);
+            $hhusillo = herramientas::find($herramientahusillo->id);
+            
+            $hlistocambio->herramienta = $herramientahusillo->herramienta;
+            $hlistocambio->longitud = $herramientahusillo->longitud;
+            $hlistocambio->diametro = $herramientahusillo->diametro;
+            $hlistocambio->enhusillo = 1;
+            $hlistocambio->listocambio = 0;
+            $hhusillo->herramienta = $herramientalistocambio->herramienta;
+            $hhusillo->longitud = $herramientalistocambio->longitud;
+            $hhusillo->diametro = $herramientalistocambio->diametro;
+            $hhusillo->enhusillo = 0;
+            $hhusillo->listocambio = 1;
+            $hlistocambio->save();
+            $hhusillo->save();
+            }
+        }
+
+            // CAMBIO EN EL MODO POCKET
+        public function cambioherramientabrazomodoP(){
+
+            $herramientaenhusillo = \DB::table('herramientas')->where('enhusillo', 1 )->first();
+
+            if ($herramientaenhusillo != NULL){
+            $hlistocambio =  herramientas::find($herramientaenhusillo->id);
+            $hlistocambio->enhusillo = 0;
+            $hlistocambio->listocambio = 1;
+            $hlistocambio->save();
+            }
+            else{
+            $herramientalistocambio = \DB::table('herramientas')->where('listocambio', 1 )->first();
+            $hlistocambio =  herramientas::find($herramientalistocambio->id);
+            $hlistocambio->enhusillo = 1;
+            $hlistocambio->listocambio = 1;
+            $hlistocambio->save();
+        }
+
+        }
+        public function cambioherramientarotacion($nuevatool){
+
+            $herramientalistocambio = \DB::table('herramientas')->where('listocambio', 1 )->first();
+            $hlistocambio =  herramientas::find($herramientalistocambio->id);
+            $hlistocambio->listocambio = 0;
+            $hlistocambio->save();
+
+
+            $modo = herramientas::find(1);
+
+            if ($modo->modoh){
+                $herramientas = \DB::table('herramientas')->where('herramienta', $nuevatool )->first();
+            }
+            else{
+                $herramientas = \DB::table('herramientas')->where('pocket', $nuevatool )->first();
     
-    $hlistocambio =  herramientas::find($herramientalistocambio->id);
-    $hhusillo = herramientas::find($herramientahusillo->id);
-    $hlistocambio->herramienta = $herramientahusillo->herramienta;
-    $hlistocambio->longitud = $herramientahusillo->longitud;
-    $hlistocambio->diametro = $herramientahusillo->diametro;
-    $hlistocambio->enhusillo = 1;
-    $hlistocambio->listocambio = 0;
-    $hhusillo->herramienta = $herramientalistocambio->herramienta;
-    $hhusillo->longitud = $herramientalistocambio->longitud;
-    $hhusillo->diametro = $herramientalistocambio->diametro;
-    $hhusillo->enhusillo = 0;
-    $hhusillo->listocambio = 1;
-    $hlistocambio->save();
-    $hhusillo->save();
-    }
+            }
 
-        // CAMBIO EN EL MODO POCKET
-    public function ponerherramientamodoP(){
-        $herramientalistocambio = \DB::table('herramientas')->where('listocambio', 1 )->first();
-        $hlistocambio =  herramientas::find($herramientalistocambio->id);
-        $hlistocambio->enhusillo = 1;
-        $hlistocambio->listocambio = 0;
-        $hlistocambio->save();
+            $hlistocambio =  herramientas::find($herramientas->id);
+            $hlistocambio->listocambio = 1;
+            $hlistocambio->save();
 
-    }
-    public function quitarherramientamodoP(){
-        $herramientalistocambio = \DB::table('herramientas')->where('enhusillo', 1 )->first();
-        $hlistocambio =  herramientas::find($herramientalistocambio->id);
-        $hlistocambio->enhusillo = 0;
-        $hlistocambio->listocambio = 1;
-        $hlistocambio->save();
-    }
+
+        }
+
+        
+   
+   
+
 
     /* 
     - AL estar en modo pocket se debe de rastrear la herramienta 0 (vacia), ya que antes de hacer el cambio de herramienta pedido se debe de hacer un cambio de herramienta en la herramienta 0.
@@ -209,13 +251,21 @@ class herramientascontroller extends Controller
 
 
     */
-    public function actualizarhusillo($modo, $pocket, $herramienta,$enhusillo)
+
+
+    /*
+    public function actualizarhusillo($item ,$enhusillo)
     {
-        if ($modo = "P"){
-        $herramientas = \DB::table('herramientas')->where('pocket', $pocket )->first();
+
+
+        $modo = herramientas::find(1);
+
+        if ($modo->modoh){
+            $herramientas = \DB::table('herramientas')->where('herramienta', $item )->first();
         }
         else{
-        $herramientas = \DB::table('herramientas')->where('herramienta', $herramienta )->first();
+            $herramientas = \DB::table('herramientas')->where('pocket', $item )->first();
+
         }
 
         $h = herramientas::find($herramientas->id);
@@ -224,13 +274,16 @@ class herramientascontroller extends Controller
     }
 
 
-    public function actualizarlistocambio($modo, $pocket, $herramienta, $listocambio)
+    public function actualizarlistocambio($item, $listocambio)
     {
-        if ($modo = "P"){
-        $herramientas = \DB::table('herramientas')->where('pocket', $pocket )->first();
+        $modo = herramientas::find(1);
+
+        if ($modo->modoh){
+            $herramientas = \DB::table('herramientas')->where('herramienta', $item )->first();
         }
         else{
-        $herramientas = \DB::table('herramientas')->where('herramienta', $herramienta )->first();
+            $herramientas = \DB::table('herramientas')->where('pocket', $item )->first();
+
         }
 
         $h = herramientas::find($herramientas->id);
