@@ -224,13 +224,10 @@ class herramientascontroller extends Controller
 
             $modo = herramientas::find(1);
 
-            if ($modo->modoh){
-                $herramientas = \DB::table('herramientas')->where('herramienta', $nuevatool )->first();
-            }
-            else{
+         
                 $herramientas = \DB::table('herramientas')->where('pocket', $nuevatool )->first();
     
-            }
+            
 
             $hlistocambio =  herramientas::find($herramientas->id);
             $hlistocambio->listocambio = 1;
@@ -274,28 +271,13 @@ class herramientascontroller extends Controller
     }
 
 
-    public function actualizarlistocambio($item, $listocambio)
-    {
-        $modo = herramientas::find(1);
-
-        if ($modo->modoh){
-            $herramientas = \DB::table('herramientas')->where('herramienta', $item )->first();
-        }
-        else{
-            $herramientas = \DB::table('herramientas')->where('pocket', $item )->first();
-
-        }
-
-        $h = herramientas::find($herramientas->id);
-        $h->listocambio = $listocambio;
-        $h->save();
-    }
+   
             //Codigo para mandar pause al tinyG.
  /*           
 $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 var_dump($client->receive());
             */    
-  
+
     
 }

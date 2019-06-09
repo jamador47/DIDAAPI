@@ -23,7 +23,7 @@ class errors2 extends Authenticatable
         'y4','y5','y6',
         'z1',
         'z2','z3',
-        'z4','z5','z6','alarmatiny','estadoerror','encoder'
+        'z4','z5','z6','alarmatiny','estadoerror','encoder','estadobotonmesaizq','estadobotonmesader'
     ];
     
     protected $casts = [
@@ -59,7 +59,9 @@ class errors2 extends Authenticatable
                 'z3' => 'float',
                 'z4' => 'float',
                 'z5' => 'float',
-                'z6' => 'float'
+                'z6' => 'float',
+                'estadobotonmesaizq'=>'integer',
+                'estadobotonmesader'=>'integer'
 
 
         

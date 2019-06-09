@@ -44,6 +44,19 @@ Route::get('/iniciartablach', [
             ]);
     
 
+            //reiniciarbotonder
+            Route::get('/resetder', [
+                'as' => 'resetder',
+                    'uses' => 'errorscontroller@reiniciarbotonder',
+                    'middleware' => 'cors',
+                ]);
+
+                        //reiniciarbotonder
+            Route::get('/resetizq', [
+                'as' => 'resetizq',
+                    'uses' => 'errorscontroller@reiniciarbotonizq',
+                    'middleware' => 'cors',
+                ]);
 
     Route::get('/actualizarh/{h1}&{l1}&{d1}&{h2}&{l2}&{d2}&{h3}&{l3}&{d3}&{h4}&{l4}&{d4}&{h5}&{l5}&{d5}/{h6}/{l6}/{d6}/{h7}/{l7}/{d7}/{h8}/{l8}/{d8}/{h9}/{l9}/{d9}/{h10}/{l10}/{d10}/{h11}/{l11}/{d11}/{h12}/{l12}/{d12}/{h13}/{l13}/{d13}/{h14}/{l14}/{d14}/{h15}/{l15}/{d15}/{h16}/{l16}/{d16}/{h17}/{l17}/{d17}/{h18}/{l18}/{d18}/{modoh}', [
         'as' => 'actualizar.h',

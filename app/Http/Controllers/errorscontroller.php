@@ -27,8 +27,12 @@ class errorscontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     
+    public $presionbotonizq = 0;
+    public $presionbotonder = 0;
+    
     
     public function cambioestado($errorid,$estado)
+
     {
         
 
@@ -167,6 +171,8 @@ if($errorid == "" && $estado == ){
                         $errores->z1 = 0;
             $errores->alarmatiny = 0;
             $errores->estadoerror = 0;
+            $errores->estadobotonmesaizq = 0;
+            $errores->estadobotonmesader = 0;
              $errores->encoder = 0;
 var_dump($errores);            
 $errores->save();
@@ -325,6 +331,8 @@ $backup->paletasmesas = $errores->paletasmesas;
     
  ------------DX1-------------------   */
         
+ if(intval($inputs[361]) == 1 ){
+         
 if(intval($inputs[36]) >= 900 ){
     if($erroresactivos->presiondx1 == 0){
         $erroresactivos->presiondx1 =1;
@@ -409,7 +417,11 @@ else{
         $erroresactivos->presiondx2 = 0;
         $erroresactivos->save();
 }
-        
+}
+
+
+
+if(intval($inputs[417]) == 1 ){
         
         /************-----------------SX1------------------***********/
   if(intval($inputs[38]) >= 900){
@@ -496,6 +508,8 @@ else{
         $erroresactivos->save();
 }
     
+}
+
 
         
    /*   ISRA REVISAR.
@@ -668,6 +682,18 @@ $client->receive();
 
         
     } 
+
+    public function reiniciarbotonder(){
+        $erroresactivos = errors2::find(1);
+        $erroresactivos->estadobotonmesader = 0;
+        $erroresactivos->save();
+    }
+
+    public function reiniciarbotonizq(){
+        $erroresactivos = errors2::find(1);
+        $erroresactivos->estadobotonmesader = 0;
+        $erroresactivos->save();
+    }
     
     public function cambioestadoarduino3($I1,$I2,$I5,$I10,$I11,$I32,$I33,$I34,$I35,$I40,$I42,$I43,$O36,$O37,$O38,$O39,$O44,$O45,$O46,$I48,$I49,$I50,$I51,$I52,$I53,$I54,$I55,$I56,$I57,$I58,$I59,$I60,$I61,$I62,$I63,$O48,$O49,$O50,$O51,$O52,$O53,$O54,$O55,$O56,$I64,$I65,$I66,$I67,$I68,$I69,$I70,$I71,$I72,$I82,$O338)
     {
@@ -746,6 +772,70 @@ $outputs[56]=$O56;
 
         
         
+
+// BOTON PALETA IZQ
+
+                if(intval($inputs[32]) >= 900){
+                        if ($presionbotonizq == 0){
+                            $presionbotonizq =1;
+                    
+                      if ($erroresactivos->estadobotonmesaizq == 0){
+                    
+                    $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/1');
+                       $erroresactivos->estadobotonmesaizq = 1;
+                          $erroresactivos->save();
+                          
+                    
+                      }
+                      if ($erroresactivos->estadobotonmesaizq == 1){
+                          
+                          $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
+                       $erroresactivos->estadobotonmesaizq = 2;
+                          $erroresactivos->save();
+                         
+                      }
+                    } 
+                    }
+                    
+                    else{
+                        $presionbotonizq = 0;
+                    }
+
+          // BOTON PALETA DER          
+
+if(intval($inputs[35]) >= 900){
+        if ($presionbotonder == 0){
+            $presionbotonder =1;
+    
+      if ($erroresactivos->estadobotonmesader == 0){
+    
+    $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/1');
+       $erroresactivos->estadobotonmesader = 1;
+          $erroresactivos->save();
+          
+    
+      }
+      if ($erroresactivos->estadobotonmesader == 1){
+          
+          $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0');
+       $erroresactivos->estadobotonmesader = 2;
+          $erroresactivos->save();
+         
+      }
+    } 
+    }
+    
+    else{
+        $presionbotonder = 0;
+    }
+
+
+
+
+
+
+
+
 //paletas mesas
    /************-----------------PALETASMESAS------------------***********/
    if(intval($inputs[56]) == 1){

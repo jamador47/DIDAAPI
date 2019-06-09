@@ -31,7 +31,7 @@ class CreateposicionadoresTable extends Migration
             $table->boolean('y2f2');
             $table->boolean('y2l1');
             $table->boolean('y2l2');
-            
+            $table->boolean('entregaon');
             $table->timestamps();
         });
     }

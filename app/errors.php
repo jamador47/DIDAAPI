@@ -26,7 +26,7 @@ class errors extends Authenticatable
         'sacarmesaa',
         'sacarmesay',
         'z2','z3',
-        'z4','z5','z6','alarmatiny','estadoerror','encoder'
+        'z4','z5','z6','alarmatiny','estadoerror','encoder','estadobotonmesaizq','estadobotonmesader'
     ];
     
    
