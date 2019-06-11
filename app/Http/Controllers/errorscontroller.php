@@ -142,6 +142,8 @@ if($errorid == "" && $estado == ){
             $errores->y2 = 0;
             $errores->presiondx1 = 0;
             $errores->presiondx2 = 0;
+            $errores->estadobotonmesaizq = 0;
+            $errores->estadobotonmesader = 0;
 
             $errores->presionsx1 = 0;
 
