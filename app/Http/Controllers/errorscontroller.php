@@ -774,7 +774,7 @@ $outputs[56]=$O56;
         
 
 // BOTON PALETA IZQ
-
+if(intval($inputs[417]) == 1 ){
                 if(intval($inputs[32]) >= 900){
                         if ($presionbotonizq == 0){
                             $presionbotonizq =1;
@@ -800,8 +800,11 @@ $outputs[56]=$O56;
                     else{
                         $presionbotonizq = 0;
                     }
+                }
+
 
           // BOTON PALETA DER          
+ if(intval($inputs[361]) == 1 ){
 
 if(intval($inputs[35]) >= 900){
         if ($presionbotonder == 0){
@@ -828,9 +831,7 @@ if(intval($inputs[35]) >= 900){
     else{
         $presionbotonder = 0;
     }
-
-
-
+ }
 
 
 
