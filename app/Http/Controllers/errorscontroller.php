@@ -323,7 +323,7 @@ $backup->paletasmesas = $errores->paletasmesas;
                         $outputs[62]=$O62;
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        $this->backuperrores($erroresactivos);
+        //$this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -619,7 +619,7 @@ $client->receive();
         $erroresactivos->z1 = $z;
 
         $erroresactivos->save();
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
 
     }   
@@ -632,7 +632,7 @@ $client->receive();
                 $erroresactivos->z2 = $z;
 
                 $erroresactivos->save();
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
 
     }       
@@ -644,7 +644,7 @@ $client->receive();
                 $erroresactivos->z3 = $z;
 
                 $erroresactivos->save();
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         
     }    
@@ -656,7 +656,7 @@ $client->receive();
                 $erroresactivos->z4 = $z;
 
                 $erroresactivos->save();
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         
     } 
@@ -668,7 +668,7 @@ $client->receive();
                 $erroresactivos->z5 = $z;
 
                 $erroresactivos->save();
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         
     } 
@@ -680,7 +680,7 @@ $client->receive();
                 $erroresactivos->z6 = $z;
 
                 $erroresactivos->save();
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         
     } 
@@ -743,7 +743,27 @@ $inputs[71]=$I71;
 $inputs[72]=$I72;
 $inputs[82]=$I82;
 
-
+if(intval($inputs[32]) >= 900){
+        if ($presionbotonizq == 0){
+            $presionbotonizq =1;
+    
+      if ($erroresactivos->estadobotonmesaizq == 0){
+    
+    $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/1');
+       $erroresactivos->estadobotonmesaizq = 1;
+          $erroresactivos->save();
+          
+    
+      }
+      if ($erroresactivos->estadobotonmesaizq == 1){
+          
+          $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
+       $erroresactivos->estadobotonmesaizq = 2;
+          $erroresactivos->save();
+         
+      }
+    } 
+    }
                     $erroresactivos->I = $inputs;
             $erroresactivos->save();     
                      
@@ -770,7 +790,7 @@ $outputs[56]=$O56;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save(); 
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         
         
@@ -963,7 +983,7 @@ $outputs[281]=$O281;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1044,7 +1064,7 @@ $outputs[331]=$O331;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1113,7 +1133,7 @@ $outputs[96]=$O96;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1181,7 +1201,7 @@ $outputs[99]=$O99;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1268,7 +1288,7 @@ $outputs[341]=$O341;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
           
           /*
@@ -1421,7 +1441,7 @@ $outputs[342]=$O342;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                $this->backuperrores($erroresactivos);
+                //$this->backuperrores($erroresactivos);
 
          
                  /*           if(intval($inputs[379]) == 0){
