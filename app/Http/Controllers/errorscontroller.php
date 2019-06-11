@@ -809,7 +809,7 @@ if(intval($inputs[417]) == 1 ){
  if(intval($inputs[361]) == 1 ){
 
 if(intval($inputs[35]) >= 900){
-        if ($presionbotonder == 0){
+       // if ($presionbotonder == 0){
             $presionbotonder =1;
     
       if ($erroresactivos->estadobotonmesader == 0){
@@ -827,7 +827,7 @@ if(intval($inputs[35]) >= 900){
           $erroresactivos->save();
          
       }
-    } 
+    //} 
     }
     
     else{
