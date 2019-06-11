@@ -812,15 +812,15 @@ if(intval($inputs[35]) >= 900){
        // if ($presionbotonder == 0){
             $presionbotonder =1;
     
-      //if ($erroresactivos->estadobotonmesader == 0){
+      if ($erroresactivos->estadobotonmesader == 0){
     
     $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/1');
        $erroresactivos->estadobotonmesader = 1;
           $erroresactivos->save();
-      }
+          
     
-    //  }
-     /* if ($erroresactivos->estadobotonmesader == 1){
+      }
+      if ($erroresactivos->estadobotonmesader == 1){
           
           $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0');
        $erroresactivos->estadobotonmesader = 2;
