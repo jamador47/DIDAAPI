@@ -744,13 +744,6 @@ $inputs[72]=$I72;
 $inputs[82]=$I82;
 
 
-if(intval($inputs[35]) >= 900){
-             $presionbotonder =1;
-     
-     $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/1');
-        $erroresactivos->estadobotonmesader = 1;
-           $erroresactivos->save();
-       }
                     $erroresactivos->I = $inputs;
             $erroresactivos->save();     
                      
