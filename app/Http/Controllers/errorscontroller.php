@@ -778,8 +778,8 @@ $outputs[56]=$O56;
 // BOTON PALETA IZQ
 if(intval($inputs[417]) == 1 ){
                 if(intval($inputs[32]) >= 900){
-                       // if ($presionbotonizq == 0){
-                            
+                        if ($presionbotonizq == 0){
+                            $presionbotonizq =1;
                     
                       if ($erroresactivos->estadobotonmesaizq == 0){
                     
@@ -796,7 +796,7 @@ if(intval($inputs[417]) == 1 ){
                           $erroresactivos->save();
                          
                       }
-                      $presionbotonizq =1;  //} 
+                    } 
                     }
                     
                     else{
