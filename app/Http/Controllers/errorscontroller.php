@@ -185,12 +185,13 @@ return "Bien";
         public function backuperrores($errores){
             
             $ultimobackup = \DB::table('errorsbackup')->orderBy('id','desc')->first();
-                $ultimobackup = errorsbackup::find($ultimobackup->id);
         $backup =  new errorsbackup;
             $backup->I = $errores->I;
             $backup->O = $errores->O;
             
                  if($ultimobackup != NULL){
+                        $ultimobackup = errorsbackup::find($ultimobackup->id);
+
                  if ($backup->I != $ultimobackup->I || $backup->O != $ultimobackup->O){
         
             $backup->save();
