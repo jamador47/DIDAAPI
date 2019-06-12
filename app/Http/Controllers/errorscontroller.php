@@ -732,7 +732,7 @@ $outputs[56]=$O56;
 if(intval($inputs[417]) == 1 ){
                 if(intval($inputs[32]) >= 900){
                         if ($erroresactivos->presionbotonmesaizq == 0){
-                                $erroresactivos->presionbotonmesaizq =1;
+                               
                     
                       if ($erroresactivos->estadobotonmesaizq == 0){
                     
@@ -749,6 +749,8 @@ if(intval($inputs[417]) == 1 ){
                           $erroresactivos->save();
                          
                       }
+ $erroresactivos->presionbotonmesaizq =1;
+ $erroresactivos->save();
                     } 
                     }
                     
