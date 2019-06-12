@@ -646,7 +646,7 @@ $client->receive();
 
     public function reiniciarbotonizq(){
         $erroresactivos = errors2::find(1);
-        $erroresactivos->estadobotonmesader = 0;
+        $erroresactivos->estadobotonmesaizq = 0;
         $erroresactivos->save();
     }
     
@@ -742,7 +742,7 @@ if(intval($inputs[417]) == 1 ){
                           
                     
                       }
-                      if ($erroresactivos->estadobotonmesaizq == 1){
+                      elseif ($erroresactivos->estadobotonmesaizq == 1){
                           
                           $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
                        $erroresactivos->estadobotonmesaizq = 2;
@@ -776,7 +776,7 @@ if(intval($inputs[35]) >= 900){
           
     
       }
-      if ($erroresactivos->estadobotonmesader == 1){
+      elseif ($erroresactivos->estadobotonmesader == 1){
           
           $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0');
        $erroresactivos->estadobotonmesader = 2;
