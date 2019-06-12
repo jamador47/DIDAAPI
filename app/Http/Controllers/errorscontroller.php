@@ -766,7 +766,7 @@ if(intval($inputs[417]) == 1 ){
 
 if(intval($inputs[35]) >= 900){
         if ($erroresactivos->presionbotonmesader == 0){
-                $erroresactivos->presionbotonmesader =1;
+                
     
       if ($erroresactivos->estadobotonmesader == 0){
     
@@ -783,6 +783,8 @@ if(intval($inputs[35]) >= 900){
           $erroresactivos->save();
          
       }
+$erroresactivos->presionbotonmesader =1;
+$erroresactivos->save();
     } 
     }
     
