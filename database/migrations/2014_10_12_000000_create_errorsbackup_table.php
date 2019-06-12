@@ -18,42 +18,7 @@ class CreateErrorsbackupTable extends Migration
            
             $table->text('O');
             $table->text('I');
-            $table->boolean('dx1');
-            $table->boolean('dx2');
-            $table->boolean('sx1');
-            $table->boolean('sx2');
-            $table->boolean('presionsx1');
-            $table->boolean('presionsx2');
-            $table->boolean('presiondx1');
-            $table->boolean('presiondx2');
-            $table->float('x1', 8, 4);
-            $table->float('y1', 8, 4);
-            $table->float('z1', 8, 4);
-            $table->boolean('sacarmesaa');
-            $table->boolean('sacarmesay');
-            $table->boolean('paletasmesas');
-            $table->float('x2', 8, 4);
-            $table->float('y2', 8, 4);
-                        $table->float('z2', 8, 4);
-            $table->float('z3', 8, 4);
-            $table->float('z4', 8, 4);
-            $table->float('z5', 8, 4);
-            $table->float('z6', 8, 4);
 
-            $table->float('x3', 8, 4);
-            $table->float('y3', 8, 4);
-            $table->float('x4', 8, 4);
-            $table->float('y4', 8, 4);
-            $table->float('x5', 8, 4);
-            $table->float('y5', 8, 4);
-            $table->float('x6', 8, 4);
-            $table->float('y6', 8, 4);
-            $table->boolean('alarmatiny');
-            $table->boolean('estadoerror');
-
-
-$table->integer('ENCODER')->nullable();
-            
             /*
             //Circuito de emergencia
             $table->integer('O19')->nullable();

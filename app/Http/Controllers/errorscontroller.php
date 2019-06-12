@@ -27,8 +27,7 @@ class errorscontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public $presionbotonizq = 0;
-    public $presionbotonder = 0;
+
     
     
     public function cambioestado($errorid,$estado)
@@ -144,7 +143,8 @@ if($errorid == "" && $estado == ){
             $errores->presiondx2 = 0;
             $errores->estadobotonmesaizq = 0;
             $errores->estadobotonmesader = 0;
-
+            $errores->presionbotonmesaizq = 0;
+            $errores->presionbotonmesader = 0;
             $errores->presionsx1 = 0;
 
             $errores->presionsx2 = 0;
@@ -185,61 +185,13 @@ return "Bien";
         public function backuperrores($errores){
             
             $ultimobackup = \DB::table('errorsbackup')->orderBy('id','desc')->first();
-
+                $ultimobackup = errorsbackup::find($ultimobackup->id);
         $backup =  new errorsbackup;
             $backup->I = $errores->I;
             $backup->O = $errores->O;
-            $backup->presionsx1 = $errores->presionsx1;
-            $backup->presionsx2 = $errores->presionsx2;
-
-            $backup->presiondx1 = $errores->presiondx1;
-
-            $backup->presiondx2 = $errores->presiondx2;
-
-            $backup->alarmatiny = 0;
-    $backup->dx1 = $errores->dx1;
-                $backup->dx2 = $errores->dx2;
-    $backup->sx1 = $errores->sx1;
-    $backup->sx2 = $errores->sx2;
-    $backup->x1 = $errores->x1;
-    $backup->x2 = $errores->x2;
-    $backup->x3 = $errores->x3;
-    $backup->x4 = $errores->x4;
-    $backup->x5 = $errores->x5;
-    $backup->x6 = $errores->x6;
-    $backup->sacarmesaa = $errores->sacarmesaa;
-    $backup->sacarmesay = $errores->sacarmesay;
-$backup->paletasmesas = $errores->paletasmesas;
-    $backup->y1 = $errores->y1;
-    $backup->y2 = $errores->y2;
-    $backup->y3 = $errores->y3;
-    $backup->y4 = $errores->y4;
-    $backup->y5 = $errores->y5;
-    $backup->y6 = $errores->y6;
-    $backup->z1 = $errores->z1;
-    $backup->z2 = $errores->z2;
-    $backup->z3 = $errores->z3;
-    $backup->z4 = $errores->z4;
-    $backup->z5 = $errores->z5;
-    $backup->z6 = $errores->z6;
-     $backup->estadoerror = 0;   
-                 $backup->encoder = $errores->encoder;  
-
-
-
+            
                  if($ultimobackup != NULL){
-                 if ($backup->I != $ultimobackup->I || $backup->O != $ultimobackup->O 
-                 || $backup->dx1 != $ultimobackup->dx1  || $backup->dx2 != $ultimobackup->dx2
-                 || $backup->sx1 != $ultimobackup->sx1 || $backup->sx2 != $ultimobackup->sx2
-                 || $backup->paletasmesas != $ultimobackup->paletasmesas || $backup->sacarmesaa != $ultimobackup->sacarmesaa
-                 || $backup->sacarmesay != $ultimobackup->sacarmesay || $backup->x1 != $ultimobackup->x1
-                 || $backup->x2 != $ultimobackup->x2 || $backup->x3 != $ultimobackup->x3
-                 || $backup->x4 != $ultimobackup->x4 || $backup->x5 != $ultimobackup->x5
-                 || $backup->x6 != $ultimobackup->x6 || $backup->y1 != $ultimobackup->y1
-                 || $backup->y2 != $ultimobackup->y2 || $backup->y3  != $ultimobackup->y3
-                 || $backup->y4 != $ultimobackup->y4 || $backup->y5 != $ultimobackup->y5
-                 || $backup->y6 != $ultimobackup->y6 || $backup->alarmatiny != $ultimobackup->alarmatiny
-                 || $backup->estadoerror != $ultimobackup->estadoerror || $backup->ENCODER != $ultimobackup->ENCODER){
+                 if ($backup->I != $ultimobackup->I || $backup->O != $ultimobackup->O){
         
             $backup->save();
         }
@@ -323,7 +275,7 @@ $backup->paletasmesas = $errores->paletasmesas;
                         $outputs[62]=$O62;
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-        //$this->backuperrores($erroresactivos);
+        $this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -743,27 +695,7 @@ $inputs[71]=$I71;
 $inputs[72]=$I72;
 $inputs[82]=$I82;
 
-if(intval($inputs[32]) >= 900){
-        if ($presionbotonizq == 0){
-            $presionbotonizq =1;
-    
-      if ($erroresactivos->estadobotonmesaizq == 0){
-    
-    $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/1');
-       $erroresactivos->estadobotonmesaizq = 1;
-          $erroresactivos->save();
-          
-    
-      }
-      if ($erroresactivos->estadobotonmesaizq == 1){
-          
-          $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
-       $erroresactivos->estadobotonmesaizq = 2;
-          $erroresactivos->save();
-         
-      }
-    } 
-    }
+
                     $erroresactivos->I = $inputs;
             $erroresactivos->save();     
                      
@@ -790,7 +722,7 @@ $outputs[56]=$O56;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save(); 
-                //$this->backuperrores($erroresactivos);
+                $this->backuperrores($erroresactivos);
 
         
         
@@ -798,8 +730,8 @@ $outputs[56]=$O56;
 // BOTON PALETA IZQ
 if(intval($inputs[417]) == 1 ){
                 if(intval($inputs[32]) >= 900){
-                        if ($presionbotonizq == 0){
-                            $presionbotonizq =1;
+                        if ($erroresactivos->presionbotonmesaizq == 0){
+                                $erroresactivos->presionbotonmesaizq =1;
                     
                       if ($erroresactivos->estadobotonmesaizq == 0){
                     
@@ -820,7 +752,8 @@ if(intval($inputs[417]) == 1 ){
                     }
                     
                     else{
-                        $presionbotonizq = 0;
+                        $erroresactivos->presionbotonmesaizq = 0;
+                        $erroresactivos->save();
                     }
                 }
 
@@ -829,8 +762,8 @@ if(intval($inputs[417]) == 1 ){
  if(intval($inputs[361]) == 1 ){
 
 if(intval($inputs[35]) >= 900){
-        if ($presionbotonder == 0){
-            $presionbotonder =1;
+        if ($erroresactivos->presionbotonmesader == 0){
+                $erroresactivos->presionbotonmesader =1;
     
       if ($erroresactivos->estadobotonmesader == 0){
     
@@ -851,7 +784,8 @@ if(intval($inputs[35]) >= 900){
     }
     
     else{
-        $presionbotonder = 0;
+        $erroresactivos->presionbotonmesader = 0;
+        $erroresactivos->save();
     }
  }
 
@@ -860,8 +794,8 @@ if(intval($inputs[35]) >= 900){
 
 
 //paletas mesas
-   /************-----------------PALETASMESAS------------------***********/
-   if(intval($inputs[56]) == 1){
+
+if(intval($inputs[56]) == 1){
     
         if (!($erroresactivos->paletasmesas)){
 
@@ -882,16 +816,15 @@ if(intval($inputs[35]) >= 900){
 
 
         
-        if(intval($inputs[5]) == 0){
-/*  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/34/0'); $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
+        if(intval($inputs[5]) == 1){
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/34/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
+}
+        else{
+       /*  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/34/0'); $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();*/
-}
-        else{
-                $pg = file_get_contents('http://192.168.0.88/arduino/digital/34/1');
-             $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
-            
         }
         
                 if(intval($inputs[10]) == 0){
@@ -983,7 +916,7 @@ $outputs[281]=$O281;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                //$this->backuperrores($erroresactivos);
+                $this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1064,7 +997,7 @@ $outputs[331]=$O331;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                //$this->backuperrores($erroresactivos);
+                $this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1133,7 +1066,7 @@ $outputs[96]=$O96;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                //$this->backuperrores($erroresactivos);
+                $this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1201,7 +1134,7 @@ $outputs[99]=$O99;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                //$this->backuperrores($erroresactivos);
+         $this->backuperrores($erroresactivos);
 
         // Procesos de emergencia
         
@@ -1288,7 +1221,7 @@ $outputs[341]=$O341;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                //$this->backuperrores($erroresactivos);
+                $this->backuperrores($erroresactivos);
 
           
           /*
@@ -1441,7 +1374,7 @@ $outputs[342]=$O342;
   
                          $erroresactivos->O = $outputs;
             $erroresactivos->save();  
-                //$this->backuperrores($erroresactivos);
+                $this->backuperrores($erroresactivos);
 
          
                  /*           if(intval($inputs[379]) == 0){

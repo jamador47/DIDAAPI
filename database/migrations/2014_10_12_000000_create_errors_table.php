@@ -52,6 +52,8 @@ class CreateErrorsTable extends Migration
               $table->boolean('estadoerror');
               $table->integer('estadobotonmesaizq');
               $table->integer('estadobotonmesader');
+              $table->boolean('presionbotonmesaizq');
+              $table->boolean('presionbotonmesader');
 $table->integer('ENCODER')->nullable();
             
             /*
