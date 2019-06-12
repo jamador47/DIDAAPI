@@ -50,8 +50,7 @@ class CreateErrorsbackupTable extends Migration
             $table->float('y6', 8, 4);
             $table->boolean('alarmatiny');
             $table->boolean('estadoerror');
-            $table->integer('estadobotonmesaizq');
-            $table->integer('estadobotonmesader');
+
 
 $table->integer('ENCODER')->nullable();
             
