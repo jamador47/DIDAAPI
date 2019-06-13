@@ -795,7 +795,7 @@ sleep(1);
                           
                           $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
                           $pg = file_get_contents('http://192.168.0.82/arduino/bajarstops/1');
-                          sleep(2);
+                          sleep(3.5);
                        $erroresactivos->estadobotonmesaizq = 2;
                           $erroresactivos->save();
                          
@@ -872,7 +872,7 @@ if(intval($inputs[35]) == 1023){
           
           $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0');
           $pg = file_get_contents('http://192.168.0.83/arduino/bajarstops/1');
-          sleep(2);
+          sleep(3.5);
        $erroresactivos->estadobotonmesader = 2;
           $erroresactivos->save();
          
