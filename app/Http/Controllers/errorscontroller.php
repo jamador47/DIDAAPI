@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\errors2;
+use App\posicionadores;
 use App\errorsbackup;
 
 use WebSocket\Client;
@@ -656,6 +657,7 @@ $client->receive();
         
         
             $erroresactivos = errors2::find(1);
+            $posicionadores = posicionadores::find(1);
                      $inputs = $erroresactivos->I;
                     $inputs[1]=$I1;
 $inputs[10]=$I10;
@@ -730,27 +732,77 @@ $outputs[56]=$O56;
 
 // BOTON PALETA IZQ
 if(intval($inputs[417]) == 1 ){
-                if(intval($inputs[32]) >= 900){
+
+
+         if(intval($inputs[32]) == 1023){
                         if ($erroresactivos->presionbotonmesaizq == 0){
                                
-                    
+                                $erroresactivos->presionbotonmesaizq =1;
+                                $erroresactivos->save();
+
                       if ($erroresactivos->estadobotonmesaizq == 0){
+
+
                     
                     $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/1');
-                       $erroresactivos->estadobotonmesaizq = 1;
-                          $erroresactivos->save();
+         
+
+                          if( $posicionadores->a1f1 ){
+
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/28/1');
+                          }
                           
-                    
+                          if( $posicionadores->a1f2 ){
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/30/1');
+
+                          }
+                          
+                          if( $posicionadores->a1l1 ){
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/12/1');
+
+                                  
+                        }
+                        if( $posicionadores->a2f1 ){
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/31/1');
+
+                        }
+                        
+                        if( $posicionadores->a2f2 ){
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/29/1');
+
+                        }
+                        
+                        if( $posicionadores->a2l1 ){
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/15/1');
+
                       }
+                          
+                      if( $posicionadores->a2l2 ){
+                        $pg = file_get_contents('http://192.168.0.82/arduino/digital/14/1');
+
+                }             
+
+sleep(1);
+
+        $erroresactivos->estadobotonmesaizq = 1;
+        $erroresactivos->save();      
+
+
+                      }
+
+
                       elseif ($erroresactivos->estadobotonmesaizq == 1){
                           
                           $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
+                          $pg = file_get_contents('http://192.168.0.82/arduino/bajarstops/1');
+                          sleep(2);
                        $erroresactivos->estadobotonmesaizq = 2;
                           $erroresactivos->save();
                          
                       }
- $erroresactivos->presionbotonmesaizq =1;
- $erroresactivos->save();
+
+
+
                     } 
                     }
                     
@@ -758,33 +810,78 @@ if(intval($inputs[417]) == 1 ){
                         $erroresactivos->presionbotonmesaizq = 0;
                         $erroresactivos->save();
                     }
-                }
+        }
+
 
 
           // BOTON PALETA DER          
  if(intval($inputs[361]) == 1 ){
 
-if(intval($inputs[35]) >= 900){
+if(intval($inputs[35]) == 1023){
         if ($erroresactivos->presionbotonmesader == 0){
                 
-    
+                $erroresactivos->presionbotonmesader =1;
+                $erroresactivos->save();
+
       if ($erroresactivos->estadobotonmesader == 0){
     
     $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/1');
+    
+                          if( $posicionadores->y1f1 ){
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/28/1');
+
+                          }
+                          
+                          if( $posicionadores->y1f2 ){
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/7/1');
+
+                          }
+                          
+                          if( $posicionadores->y1l1 ){
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/45/1');
+
+                        }
+                        if( $posicionadores->y2f1 ){
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/8/1');
+
+                        }
+                        
+                        if( $posicionadores->y2f2 ){
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/9/1');
+
+                        }
+                        
+                        if( $posicionadores->y2l1 ){
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/46/1');
+
+                      }
+                          
+                      if( $posicionadores->y2l2 ){
+                        $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1');
+                }   
+
+                sleep(1);
        $erroresactivos->estadobotonmesader = 1;
           $erroresactivos->save();
           
     
       }
+
+
       elseif ($erroresactivos->estadobotonmesader == 1){
           
           $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0');
+          $pg = file_get_contents('http://192.168.0.83/arduino/bajarstops/1');
+          sleep(2);
        $erroresactivos->estadobotonmesader = 2;
           $erroresactivos->save();
          
       }
-$erroresactivos->presionbotonmesader =1;
-$erroresactivos->save();
+
+
+
+
+
     } 
     }
     
