@@ -991,16 +991,16 @@ if($errorid == "" && $estado == ){
         
             $erroresactivos = errors2::find(1);
                      $inputs = $erroresactivos->I;
-                   $inputs[256]=$i256;
-$inputs[257]=$i257;
-$inputs[258]=$i258;
-$inputs[259]=$i259;
-$inputs[260]=$i260;
-$inputs[261]=$i261;
-$inputs[262]=$i262;
-$inputs[272]=$i272;
-$inputs[273]=$i273;
-$inputs[274]=$i274;
+                   $inputs[256]=$I256;
+$inputs[257]=$I257;
+$inputs[258]=$I258;
+$inputs[259]=$I259;
+$inputs[260]=$I260;
+$inputs[261]=$I261;
+$inputs[262]=$I262;
+$inputs[272]=$I272;
+$inputs[273]=$I273;
+$inputs[274]=$I274;
 
 
                     $erroresactivos->I = $inputs;
