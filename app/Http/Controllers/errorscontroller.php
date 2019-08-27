@@ -491,14 +491,14 @@ $client->receive();
             
         }*/
         
-        
+        /*
                 if(intval($inputs[22]) == 0){
   $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
-   
+   */
         
         
         if(intval($inputs[18]) == 1){
@@ -555,13 +555,13 @@ $client->receive();
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }*/
-        
+        /*
                if(intval($inputs[22]) == 0){
   $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
-}
+}*/
         
                if(intval($inputs[8]) == 0){
   $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
@@ -739,12 +739,20 @@ $outputs[56]=$O56;
 
         
         
+//BOTON LUBRICACION
+ if(intval($inputs[61]) >= 900)  {
+        $comenzarbomba = file_get_contents('http://192.168.0.85/arduino/digital/3/1');
+        $encenderled = file_get_contents('http://192.168.0.88/arduino/digital/12/1');
+        sleep(1);
+        $comenzarbomba = file_get_contents('http://192.168.0.85/arduino/digital/3/0');
+
+ }            
 
 // BOTON PALETA IZQ
 if(intval($inputs[417]) == 1 ){
 
 
-         if(intval($inputs[32]) == 1023){
+         if(intval($inputs[32]) >= 1023){
                         if ($erroresactivos->presionbotonmesaizq == 0){
                                
                                 $erroresactivos->presionbotonmesaizq =1;
@@ -792,7 +800,7 @@ if(intval($inputs[417]) == 1 ){
 
                 }             
 
-sleep(1);
+sleep(0.1);
 
         $erroresactivos->estadobotonmesaizq = 1;
         $erroresactivos->save();      
@@ -805,7 +813,7 @@ sleep(1);
                           
                           $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0');
                           $pg = file_get_contents('http://192.168.0.82/arduino/bajarstops/1');
-                          sleep(3.5);
+                          sleep(1);
                        $erroresactivos->estadobotonmesaizq = 2;
                           $erroresactivos->save();
                          
@@ -827,7 +835,7 @@ sleep(1);
           // BOTON PALETA DER          
  if(intval($inputs[361]) == 1 ){
 
-if(intval($inputs[35]) == 1023){
+if(intval($inputs[35]) >= 1023){
         if ($erroresactivos->presionbotonmesader == 0){
                 
                 $erroresactivos->presionbotonmesader =1;
@@ -870,7 +878,7 @@ if(intval($inputs[35]) == 1023){
                         $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1');
                 }   
 
-                sleep(1);
+                sleep(0.1);
        $erroresactivos->estadobotonmesader = 1;
           $erroresactivos->save();
           
@@ -882,7 +890,7 @@ if(intval($inputs[35]) == 1023){
           
           $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0');
           $pg = file_get_contents('http://192.168.0.83/arduino/bajarstops/1');
-          sleep(3.5);
+          sleep(1);
        $erroresactivos->estadobotonmesader = 2;
           $erroresactivos->save();
          
