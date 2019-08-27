@@ -752,7 +752,7 @@ $outputs[56]=$O56;
 if(intval($inputs[417]) == 1 ){
 
 
-         if(intval($inputs[32]) >= 1023){
+         if(intval($inputs[32]) >= 1000){
                         if ($erroresactivos->presionbotonmesaizq == 0){
                                
                                 $erroresactivos->presionbotonmesaizq =1;
@@ -835,7 +835,7 @@ sleep(0.1);
           // BOTON PALETA DER          
  if(intval($inputs[361]) == 1 ){
 
-if(intval($inputs[35]) >= 1023){
+if(intval($inputs[35]) >= 1000){
         if ($erroresactivos->presionbotonmesader == 0){
                 
                 $erroresactivos->presionbotonmesader =1;
