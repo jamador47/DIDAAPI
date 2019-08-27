@@ -741,10 +741,10 @@ $outputs[56]=$O56;
         
 //BOTON LUBRICACION
  if(intval($inputs[61]) >= 900)  {
-        $comenzarbomba = file_get_contents('http://192.168.0.85/arduino/digital/3/1');
+        $comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
         $encenderled = file_get_contents('http://192.168.0.88/arduino/digital/12/1');
-        sleep(1);
-        $comenzarbomba = file_get_contents('http://192.168.0.85/arduino/digital/3/0');
+        sleep(2);
+        $comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 
  }            
 
