@@ -741,10 +741,38 @@ $outputs[56]=$O56;
         
 //BOTON LUBRICACION
  if(intval($inputs[61]) >= 900)  {
+         //LOOP 1.
         $comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
         $encenderled = file_get_contents('http://192.168.0.88/arduino/digital/12/1');
         sleep(2);
         $comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
+//LOOP 2.
+        sleep(120);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
+sleep(2);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
+//LOOP 3.
+sleep(120);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
+sleep(2);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
+//LOOP 4.
+sleep(120);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
+sleep(2);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
+//LOOP 5.
+sleep(120);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
+sleep(2);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
+sleep(120);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
+sleep(2);
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
+sleep(240);
+
+$encenderled = file_get_contents('http://192.168.0.88/arduino/digital/12/0');
 
  }            
 
@@ -800,7 +828,7 @@ if(intval($inputs[417]) == 1 ){
 
                 }             
 
-sleep(0.1);
+                usleep(250000);
 
         $erroresactivos->estadobotonmesaizq = 1;
         $erroresactivos->save();      
@@ -878,7 +906,7 @@ if(intval($inputs[35]) >= 1000){
                         $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1');
                 }   
 
-                sleep(0.1);
+                usleep(250000);
        $erroresactivos->estadobotonmesader = 1;
           $erroresactivos->save();
           
