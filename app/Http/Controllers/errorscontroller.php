@@ -53,7 +53,7 @@ class errorscontroller extends Controller
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
@@ -294,34 +294,34 @@ return "Bien";
         $erroresactivos->presiondx2 =1;
         $erroresactivos->save();
     if (!($erroresactivos->dx2)){
-   $pg = file('http://192.168.0.83/arduino/digital/47/1');
+   $pg = file_get_contents('http://192.168.0.83/arduino/digital/47/1');
 
-     $pg = file('http://192.168.0.83/arduino/digital/47/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/47/0');
 
         $erroresactivos->dx2 = 1;
         $erroresactivos->save();
 
         if(intval($erroresactivos->paletasmesas) == 1){
                 
-   $pg = file('http://192.168.0.83/arduino/digital/10/0');
-                $pg = file('http://192.168.0.88/arduino/digital/2/1');
-$pg = file('http://192.168.0.88/arduino/digital/2/0');
+   $pg = file_get_contents('http://192.168.0.83/arduino/digital/10/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/1');
+$pg = file_get_contents('http://192.168.0.88/arduino/digital/2/0');
 
         }
 
     }
     else{
         
-        $pg = file('http://192.168.0.83/arduino/digital/48/1');
+        $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/1');
 
-     $pg = file('http://192.168.0.83/arduino/digital/48/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/48/0');
                $erroresactivos->dx2 = 0;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
             
-$pg = file('http://192.168.0.83/arduino/digital/10/1');
-$pg = file('http://192.168.0.88/arduino/digital/4/1');
-$pg = file('http://192.168.0.88/arduino/digital/4/0');
+$pg = file_get_contents('http://192.168.0.83/arduino/digital/10/1');
+$pg = file_get_contents('http://192.168.0.88/arduino/digital/4/1');
+$pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
 
              
 
@@ -341,37 +341,37 @@ if(intval($inputs[36]) >= 900 ){
         $erroresactivos->presiondx1 = 1;
         $erroresactivos->save();
     if (!($erroresactivos->dx1)){
-$pg = file('http://192.168.0.83/arduino/digital/5/1');
+$pg = file_get_contents('http://192.168.0.83/arduino/digital/5/1');
 
-     $pg = file('http://192.168.0.83/arduino/digital/5/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/5/0');
                
     
         $erroresactivos->dx1 = 1;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
              
-                $pg = file('http://192.168.0.83/arduino/digital/11/1');
-                $pg = file('http://192.168.0.88/arduino/digital/4/1');
-$pg = file('http://192.168.0.88/arduino/digital/4/0');
+                $pg = file_get_contents('http://192.168.0.83/arduino/digital/11/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/4/1');
+$pg = file_get_contents('http://192.168.0.88/arduino/digital/4/0');
                 
         }
 
     }
     else{
 
-$pg = file('http://192.168.0.83/arduino/digital/12/1');
+$pg = file_get_contents('http://192.168.0.83/arduino/digital/12/1');
 
-     $pg = file('http://192.168.0.83/arduino/digital/12/0');
+     $pg = file_get_contents('http://192.168.0.83/arduino/digital/12/0');
         
 
                $erroresactivos->dx1 = 0;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
               
-                $pg = file('http://192.168.0.83/arduino/digital/11/0');
-                $pg = file('http://192.168.0.88/arduino/digital/2/1');
+                $pg = file_get_contents('http://192.168.0.83/arduino/digital/11/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/1');
               
-                $pg = file('http://192.168.0.88/arduino/digital/2/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/2/0');
                 
         }
     }
@@ -392,33 +392,33 @@ if(intval($inputs[417]) == 1 ){
         $erroresactivos->presionsx1 =1;
         $erroresactivos->save();
     if (!($erroresactivos->sx1)){
- $pg = file('http://192.168.0.82/arduino/digital/33/1');
+ $pg = file_get_contents('http://192.168.0.82/arduino/digital/33/1');
  
-     $pg = file('http://192.168.0.82/arduino/digital/33/0');
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/33/0');
         $erroresactivos->sx1 = 1;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
-           $pg = file('http://192.168.0.82/arduino/digital/4/0');
-                $pg = file('http://192.168.0.88/arduino/digital/7/1');
+           $pg = file_get_contents('http://192.168.0.82/arduino/digital/4/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/7/1');
                 
-                $pg = file('http://192.168.0.88/arduino/digital/7/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/7/0');
                 
         }
 
     }
     else{
         
-        $pg = file('http://192.168.0.82/arduino/digital/32/1');
+        $pg = file_get_contents('http://192.168.0.82/arduino/digital/32/1');
 
-     $pg = file('http://192.168.0.82/arduino/digital/32/0');
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/32/0');
                $erroresactivos->sx1 = 0;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
              
-                $pg = file('http://192.168.0.82/arduino/digital/4/1');
-                $pg = file('http://192.168.0.88/arduino/digital/6/1');
+                $pg = file_get_contents('http://192.168.0.82/arduino/digital/4/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/6/1');
         
-                $pg = file('http://192.168.0.88/arduino/digital/6/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/6/0');
                 
                 
         }
@@ -436,17 +436,17 @@ else{
         $erroresactivos->presionsx2 =1;
         $erroresactivos->save();
     if (!($erroresactivos->sx2)){
-        $pg = file('http://192.168.0.82/arduino/digital/44/1');
+        $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/1');
    
-     $pg = file('http://192.168.0.82/arduino/digital/44/0');
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/44/0');
         $erroresactivos->sx2 = 1;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
            
 
-                $pg = file('http://192.168.0.82/arduino/digital/43/0');
-                $pg = file('http://192.168.0.88/arduino/digital/7/1');
-                $pg = file('http://192.168.0.88/arduino/digital/7/0');
+                $pg = file_get_contents('http://192.168.0.82/arduino/digital/43/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/7/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/7/0');
           
                 
         }
@@ -454,16 +454,16 @@ else{
     }
     else{
         
-        $pg = file('http://192.168.0.82/arduino/digital/5/1');
+        $pg = file_get_contents('http://192.168.0.82/arduino/digital/5/1');
 
-     $pg = file('http://192.168.0.82/arduino/digital/5/0');
+     $pg = file_get_contents('http://192.168.0.82/arduino/digital/5/0');
                $erroresactivos->sx2 = 0;
         $erroresactivos->save();
         if(intval($erroresactivos->paletasmesas) == 1){
-                $pg = file('http://192.168.0.82/arduino/digital/43/1');
-                $pg = file('http://192.168.0.88/arduino/digital/6/1');
+                $pg = file_get_contents('http://192.168.0.82/arduino/digital/43/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/6/1');
         
-                $pg = file('http://192.168.0.88/arduino/digital/6/0');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/6/0');
            
                 
         }
@@ -481,19 +481,19 @@ else{
    /*   ISRA REVISAR.
 
   if(intval($inputs[21]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
         else{
-             $pg = file('http://192.168.0.88/arduino/digital/11/1');
+             $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
             
         }*/
         
         /*
                 if(intval($inputs[22]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -502,7 +502,7 @@ $client->receive();
         
         
         if(intval($inputs[18]) == 1){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -515,7 +515,7 @@ $client->receive();
     
         /*
                if(intval($inputs[31]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
                $client->receive();
@@ -523,7 +523,7 @@ $client->send("send /dev/ttyUSB0 !");
      
 
                if(intval($inputs[30]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -534,7 +534,7 @@ $client->receive();
         
           
                if(intval($inputs[29]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -542,7 +542,7 @@ $client->receive();
         
         
                if(intval($inputs[28]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -550,21 +550,21 @@ $client->receive();
         
         /*
                if(intval($inputs[27]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }*/
         /*
                if(intval($inputs[22]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }*/
         
                if(intval($inputs[8]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -664,7 +664,7 @@ $client->receive();
     public function cambioestadoarduino3($I1,$I2,$I5,$I10,$I11,$I32,$I33,$I34,$I35,$I40,$I42,$I43,$O36,$O37,$O38,$O39,$O44,$O45,$O46,$I48,$I49,$I50,$I51,$I52,$I53,$I54,$I55,$I56,$I57,$I58,$I59,$I60,$I61,$I62,$I63,$O48,$O49,$O50,$O51,$O52,$O53,$O54,$O55,$O56,$I64,$I65,$I66,$I67,$I68,$I69,$I70,$I71,$I72,$I82,$O338)
     {
         
-        
+        $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
         
             $erroresactivos = errors2::find(1);
             $posicionadores = posicionadores::find(1);
@@ -742,37 +742,37 @@ $outputs[56]=$O56;
 //BOTON LUBRICACION
  if(intval($inputs[61]) >= 900)  {
          //LOOP 1.
-        $comenzarbomba = file('http://192.168.0.88/arduino/digital/3/1');
-        $encenderled = file('http://192.168.0.88/arduino/digital/12/1');
+        $comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
+        $encenderled = file_get_contents('http://192.168.0.88/arduino/digital/12/1');
         sleep(2);
-        $comenzarbomba = file('http://192.168.0.88/arduino/digital/3/0');
+        $comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 //LOOP 2.
         sleep(120);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/1');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
 sleep(2);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/0');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 //LOOP 3.
 sleep(120);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/1');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
 sleep(2);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/0');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 //LOOP 4.
 sleep(120);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/1');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
 sleep(2);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/0');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 //LOOP 5.
 sleep(120);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/1');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
 sleep(2);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/0');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 sleep(120);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/1');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/1');
 sleep(2);
-$comenzarbomba = file('http://192.168.0.88/arduino/digital/3/0');
+$comenzarbomba = file_get_contents('http://192.168.0.88/arduino/digital/3/0');
 sleep(240);
 
-$encenderled = file('http://192.168.0.88/arduino/digital/12/0');
+$encenderled = file_get_contents('http://192.168.0.88/arduino/digital/12/0');
 
  }            
 
@@ -790,45 +790,44 @@ if(intval($inputs[417]) == 1 ){
 
 
                     
-                    $pg = file('http://192.168.0.88/arduino/digital/23/1');
+                    $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/1',false,$context);
          
 
                           if( $posicionadores->a1f1 ){
 
-                                $pg = file('http://192.168.0.82/arduino/digital/28/1');
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/28/1');
                           }
                           
                           if( $posicionadores->a1f2 ){
-                                $pg = file('http://192.168.0.82/arduino/digital/30/1');
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/30/1');
 
                           }
                           
                           if( $posicionadores->a1l1 ){
-                                $pg = file('http://192.168.0.82/arduino/digital/12/1');
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/12/1');
 
                                   
                         }
                         if( $posicionadores->a2f1 ){
-                                $pg = file('http://192.168.0.82/arduino/digital/31/1');
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/31/1');
 
                         }
                         
                         if( $posicionadores->a2f2 ){
-                                $pg = file('http://192.168.0.82/arduino/digital/29/1');
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/29/1');
 
                         }
                         
                         if( $posicionadores->a2l1 ){
-                                $pg = file('http://192.168.0.82/arduino/digital/15/1');
+                                $pg = file_get_contents('http://192.168.0.82/arduino/digital/15/1');
 
                       }
                           
                       if( $posicionadores->a2l2 ){
-                        $pg = file('http://192.168.0.82/arduino/digital/14/1');
+                        $pg = file_get_contents('http://192.168.0.82/arduino/digital/14/1');
 
                 }             
 
-                usleep(250000);
 
         $erroresactivos->estadobotonmesaizq = 1;
         $erroresactivos->save();      
@@ -839,8 +838,8 @@ if(intval($inputs[417]) == 1 ){
 
                       elseif ($erroresactivos->estadobotonmesaizq == 1){
                           
-                          $pg = file('http://192.168.0.88/arduino/digital/23/0');
-                          $pg = file('http://192.168.0.82/arduino/bajarstops/1');
+                          $pg = file_get_contents('http://192.168.0.88/arduino/digital/23/0',false,$context);
+                          $pg = file_get_contents('http://192.168.0.82/arduino/bajarstops/1',false,$context);
                           sleep(1);
                        $erroresactivos->estadobotonmesaizq = 2;
                           $erroresactivos->save();
@@ -871,42 +870,42 @@ if(intval($inputs[35]) >= 1000){
 
       if ($erroresactivos->estadobotonmesader == 0){
     
-    $pg = file('http://192.168.0.88/arduino/digital/24/1');
+    $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/1',false,$context);
     
                           if( $posicionadores->y1f1 ){
-                                $pg = file('http://192.168.0.83/arduino/digital/28/1');
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/28/1',false,$context);;
 
                           }
                           
                           if( $posicionadores->y1f2 ){
-                                $pg = file('http://192.168.0.83/arduino/digital/7/1');
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/7/1',false,$context);;
 
                           }
                           
                           if( $posicionadores->y1l1 ){
-                                $pg = file('http://192.168.0.83/arduino/digital/45/1');
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/45/1',false,$context);
 
                         }
                         if( $posicionadores->y2f1 ){
-                                $pg = file('http://192.168.0.83/arduino/digital/8/1');
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/8/1',false,$context);
 
                         }
                         
                         if( $posicionadores->y2f2 ){
-                                $pg = file('http://192.168.0.83/arduino/digital/9/1');
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/9/1',false,$context);
 
                         }
                         
                         if( $posicionadores->y2l1 ){
-                                $pg = file('http://192.168.0.83/arduino/digital/46/1');
+                                $pg = file_get_contents('http://192.168.0.83/arduino/digital/46/1',false,$context);
 
                       }
                           
                       if( $posicionadores->y2l2 ){
-                        $pg = file('http://192.168.0.83/arduino/digital/44/1');
+                        $pg = file_get_contents('http://192.168.0.83/arduino/digital/44/1',false,$context);
                 }   
 
-                usleep(250000);
+             
        $erroresactivos->estadobotonmesader = 1;
           $erroresactivos->save();
           
@@ -916,8 +915,8 @@ if(intval($inputs[35]) >= 1000){
 
       elseif ($erroresactivos->estadobotonmesader == 1){
           
-          $pg = file('http://192.168.0.88/arduino/digital/24/0');
-          $pg = file('http://192.168.0.83/arduino/bajarstops/1');
+          $pg = file_get_contents('http://192.168.0.88/arduino/digital/24/0',false,$context);
+          $pg = file_get_contents('http://192.168.0.83/arduino/bajarstops/1',false,$context);
           sleep(1);
        $erroresactivos->estadobotonmesader = 2;
           $erroresactivos->save();
@@ -949,13 +948,13 @@ if(intval($inputs[56]) == 1){
 
             $erroresactivos->paletasmesas = 1;
             $erroresactivos->save();
-            $pg = file('http://192.168.0.85/arduino/digital/5/1');
+            $pg = file_get_contents('http://192.168.0.85/arduino/digital/5/1');
         }
         else{
             
                 $erroresactivos->paletasmesas = 0;
                 $erroresactivos->save();
-                $pg = file('http://192.168.0.85/arduino/digital/5/0');
+                $pg = file_get_contents('http://192.168.0.85/arduino/digital/5/0');
             }
         }
 
@@ -965,11 +964,11 @@ if(intval($inputs[56]) == 1){
 
         
         if(intval($inputs[5]) == 1){
-                $pg = file('http://192.168.0.88/arduino/digital/34/1');
-                $pg = file('http://192.168.0.88/arduino/digital/11/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/34/1');
+                $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/1');
 }
         else{
-       /*  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/34/0'); $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+       /*  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/34/0'); $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();*/
@@ -986,14 +985,14 @@ $client->send("send /dev/ttyUSB0 !");
 $client->receive();
 }
                 if(intval($inputs[1]) == 0){
-           $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+           $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
         
               if(intval($inputs[2]) == 0){
-           $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+           $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -1003,7 +1002,7 @@ $client->receive();
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
@@ -1071,7 +1070,7 @@ $outputs[281]=$O281;
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
@@ -1152,7 +1151,7 @@ $outputs[331]=$O331;
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
@@ -1221,7 +1220,7 @@ $outputs[96]=$O96;
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
@@ -1289,7 +1288,7 @@ $outputs[99]=$O99;
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
@@ -1374,70 +1373,70 @@ $outputs[341]=$O341;
           
           /*
                if(intval($inputs[354]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
               if(intval($inputs[326]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
               if(intval($inputs[370]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
               if(intval($inputs[407]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
               if(intval($inputs[426]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
           
                       if(intval($inputs[353]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
                 if(intval($inputs[328]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
                   if(intval($inputs[368]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
           
                           if(intval($inputs[387]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
                    if(intval($inputs[405]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
           
                    if(intval($inputs[424]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -1447,7 +1446,7 @@ $client->receive();
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     */
@@ -1526,7 +1525,7 @@ $outputs[342]=$O342;
 
          
                  /*           if(intval($inputs[379]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -1535,53 +1534,53 @@ $client->receive();
 /*
          
                     if(intval($inputs[389]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
                  if(intval($inputs[397]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
          
                  if(intval($inputs[416]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
          
                  if(intval($inputs[436]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
          
                  if(intval($inputs[341]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
                if(intval($inputs[378]) == 0){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
          if(intval($inputs[434]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
 }
          
               if(intval($inputs[396]) <= 10){
-  $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
+  $pg = file_get_contents('http://192.168.0.88/arduino/digital/11/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/19/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/29/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/27/0');  $pg = file_get_contents('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send /dev/ttyUSB0 !");   
 $client->receive();
@@ -1593,7 +1592,7 @@ $client->receive();
 /*-- Plantilla para nuevos errores urgentes -- 
 
 if($errorid == "" && $estado == ){
- $pg = file('http://URL');
+ $pg = file_get_contents('http://URL');
         
     }
     
