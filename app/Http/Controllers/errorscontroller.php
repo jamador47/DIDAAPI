@@ -871,7 +871,7 @@ if(intval($inputs[35]) >= 1000){
 
       if ($erroresactivos->estadobotonmesader == 0){
     
-    $pg = file('http://192.168.0.88/arduino/digital/24/1');
+   // $pg = file('http://192.168.0.88/arduino/digital/24/1');
     
                           if( $posicionadores->y1f1 ){
                                 $pg = file('http://192.168.0.83/arduino/digital/28/1');
@@ -916,7 +916,7 @@ if(intval($inputs[35]) >= 1000){
 
       elseif ($erroresactivos->estadobotonmesader == 1){
           
-          $pg = file('http://192.168.0.88/arduino/digital/24/0');
+        //  $pg = file('http://192.168.0.88/arduino/digital/24/0');
           $pg = file('http://192.168.0.83/arduino/bajarstops/1');
           sleep(1);
        $erroresactivos->estadobotonmesader = 2;
