@@ -1011,7 +1011,7 @@ if($errorid == "" && $estado == ){
    
 
         // En caso de que no sea el primer error 
-                return 1;     
+                    
                    
              }
             
