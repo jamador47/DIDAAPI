@@ -828,7 +828,7 @@ if(intval($inputs[417]) == 1 ){
 
                 }             
 
-              
+                usleep(250000);
 
         $erroresactivos->estadobotonmesaizq = 1;
         $erroresactivos->save();      
@@ -841,7 +841,7 @@ if(intval($inputs[417]) == 1 ){
                           
                           $pg = file('http://192.168.0.88/arduino/digital/23/0');
                           $pg = file('http://192.168.0.82/arduino/bajarstops/1');
-                       
+                          sleep(1);
                        $erroresactivos->estadobotonmesaizq = 2;
                           $erroresactivos->save();
                          
@@ -906,6 +906,7 @@ if(intval($inputs[35]) >= 1000){
                         $pg = file('http://192.168.0.83/arduino/digital/44/1');
                 }   
 
+                usleep(250000);
        $erroresactivos->estadobotonmesader = 1;
           $erroresactivos->save();
           
@@ -917,6 +918,7 @@ if(intval($inputs[35]) >= 1000){
           
           $pg = file('http://192.168.0.88/arduino/digital/24/0');
           $pg = file('http://192.168.0.83/arduino/bajarstops/1');
+          sleep(1);
        $erroresactivos->estadobotonmesader = 2;
           $erroresactivos->save();
          
@@ -1011,7 +1013,7 @@ if($errorid == "" && $estado == ){
    
 
         // En caso de que no sea el primer error 
-                    
+                return 1;     
                    
              }
             
