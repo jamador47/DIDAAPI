@@ -192,6 +192,481 @@ class origenescontroller extends Controller
 
     }
 
+
+    public function UTO($coord,$x1,$y1,$a1,$z1)
+    {
+        $origenes = origenes::find(1);
+
+
+        switch ($coord){
+
+            case "1":
+            $xactivo = $origenes->x1;
+            $yactivo = $origenes->y1;
+            $zactivo = $origenes->z1;
+            $aactivo = $origenes->a1;
+   
+
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            
+            case "2":
+            $xactivo = $origenes->x2;
+            $yactivo = $origenes->y2;
+            $zactivo = $origenes->z2;
+            $aactivo = $origenes->a2;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "3":
+            
+            $xactivo = $origenes->x3;
+            $yactivo = $origenes->y3;
+            $zactivo = $origenes->z3;
+            $aactivo = $origenes->a3;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "4":
+            $xactivo = $origenes->x4;
+            $yactivo = $origenes->y4;
+            $zactivo = $origenes->z4;
+            $aactivo = $origenes->a4;
+   
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "5":
+            $xactivo = $origenes->x5;
+            $yactivo = $origenes->y5;
+            $zactivo = $origenes->z5;
+            $aactivo = $origenes->a5;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "6":
+            
+            $xactivo = $origenes->x6;
+            $yactivo = $origenes->y6;
+            $zactivo = $origenes->z6;
+            $aactivo = $origenes->a6;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "7":
+            
+            $xactivo = $origenes->x7;
+            $yactivo = $origenes->y7;
+            $zactivo = $origenes->z7;
+            $aactivo = $origenes->a7;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "8":
+            $xactivo = $origenes->x8;
+            $yactivo = $origenes->y8;
+            $zactivo = $origenes->z8;
+            $aactivo = $origenes->a8;
+        
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "9":
+            
+            $xactivo = $origenes->x9;
+            $yactivo = $origenes->y9;
+            $zactivo = $origenes->z9;
+            $aactivo = $origenes->a9;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "10":
+            $xactivo = $origenes->x10;
+            $yactivo = $origenes->y10;
+            $zactivo = $origenes->z10;
+            $aactivo = $origenes->a10;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "11":
+            $xactivo = $origenes->x11;
+            $yactivo = $origenes->y11;
+            $zactivo = $origenes->z11;
+            $aactivo = $origenes->a11;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "12":
+            $xactivo = $origenes->x12;
+            $yactivo = $origenes->y12;
+            $zactivo = $origenes->z12;
+            $aactivo = $origenes->a12;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "13":
+            
+            $xactivo = $origenes->x13;
+            $yactivo = $origenes->y13;
+            $zactivo = $origenes->z13;
+            $aactivo = $origenes->a13;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "14":
+            $xactivo = $origenes->x14;
+            $yactivo = $origenes->y14;
+            $zactivo = $origenes->z14;
+            $aactivo = $origenes->a14;
+
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+            case "15":
+            $xactivo = $origenes->x15;
+            $yactivo = $origenes->y15;
+            $zactivo = $origenes->z15;
+            $aactivo = $origenes->a15;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            
+            break;
+            
+            case "16":
+            
+            $xactivo = $origenes->x16;
+            $yactivo = $origenes->y16;
+            $zactivo = $origenes->z16;
+            $aactivo = $origenes->a16;
+            $xactivo = intval($xactivo) + intval($x1);
+            $yactivo = intval($yactivo) + intval($y1);
+            $aactivo = intval($aactivo) + intval($a1);
+            $zactivo = intval($zactivo) + intval($z1);
+            $origenes->xactivo = $xactivo;
+            $origenes->yactivo = $yactivo;
+            $origenes->aactivo = $aactivo;
+            $origenes->zactivo = $zactivo;
+            $origenes->save();
+
+            break;
+            
+         }
+    }
+
+    public function UAO($coord)
+    {
+        $origenes = origenes::find(1);
+    switch ($coord) {
+
+case "1":
+$origenes->xactivo = $origenes->x1;
+$origenes->yactivo = $origenes->y1;
+$origenes->zactivo = $origenes->z1;
+$origenes->aactivo = $origenes->a1;
+$origenes->coordactivas=1;
+$origenes->save();
+break;
+
+
+case "2":
+$origenes->xactivo = $origenes->x2;
+$origenes->yactivo = $origenes->y2;
+$origenes->zactivo = $origenes->z2;
+$origenes->aactivo = $origenes->a2;
+$origenes->coordactivas=2;
+$origenes->save();
+
+break;
+
+case "3":
+
+$origenes->xactivo = $origenes->x3;
+$origenes->yactivo = $origenes->y3;
+$origenes->zactivo = $origenes->z3;
+$origenes->aactivo = $origenes->a3;
+$origenes->coordactivas=3;
+$origenes->save();
+break;
+
+case "4":
+$origenes->xactivo = $origenes->x4;
+$origenes->yactivo = $origenes->y4;
+$origenes->zactivo = $origenes->z4;
+$origenes->aactivo = $origenes->a4;
+$origenes->coordactivas=4;
+$origenes->save();
+
+break;
+
+case "5":
+$origenes->xactivo = $origenes->x5;
+$origenes->yactivo = $origenes->y5;
+$origenes->zactivo = $origenes->z5;
+$origenes->aactivo = $origenes->a5;
+$origenes->coordactivas=5;
+$origenes->save();
+
+break;
+
+case "6":
+
+$origenes->xactivo = $origenes->x6;
+$origenes->yactivo = $origenes->y6;
+$origenes->zactivo = $origenes->z6;
+$origenes->aactivo = $origenes->a6;
+$origenes->coordactivas=6;
+$origenes->save();
+break;
+
+case "7":
+
+$origenes->xactivo = $origenes->x7;
+$origenes->yactivo = $origenes->y7;
+$origenes->zactivo = $origenes->z7;
+$origenes->aactivo = $origenes->a7;
+$origenes->coordactivas=7;
+$origenes->save();
+break;
+
+case "8":
+$origenes->xactivo = $origenes->x8;
+$origenes->yactivo = $origenes->y8;
+$origenes->zactivo = $origenes->z8;
+$origenes->aactivo = $origenes->a8;
+$origenes->coordactivas=8;
+$origenes->save();
+
+break;
+
+case "9":
+
+$origenes->xactivo = $origenes->x9;
+$origenes->yactivo = $origenes->y9;
+$origenes->zactivo = $origenes->z9;
+$origenes->aactivo = $origenes->a9;
+$origenes->coordactivas=9;
+$origenes->save();
+
+break;
+
+case "10":
+$origenes->xactivo = $origenes->x10;
+$origenes->yactivo = $origenes->y10;
+$origenes->zactivo = $origenes->z10;
+$origenes->aactivo = $origenes->a10;
+$origenes->coordactivas=10;
+$origenes->save();
+
+break;
+
+case "11":
+$origenes->xactivo = $origenes->x11;
+$origenes->yactivo = $origenes->y11;
+$origenes->zactivo = $origenes->z11;
+$origenes->aactivo = $origenes->a11;
+$origenes->coordactivas=11;
+$origenes->save();
+
+break;
+
+case "12":
+$origenes->xactivo = $origenes->x12;
+$origenes->yactivo = $origenes->y12;
+$origenes->zactivo = $origenes->z12;
+$origenes->aactivo = $origenes->a12;
+$origenes->coordactivas=12;
+$origenes->save();
+
+break;
+
+case "13":
+
+$origenes->xactivo = $origenes->x13;
+$origenes->yactivo = $origenes->y13;
+$origenes->zactivo = $origenes->z13;
+$origenes->aactivo = $origenes->a13;
+$origenes->coordactivas=13;
+$origenes->save();
+break;
+
+case "14":
+$origenes->xactivo = $origenes->x14;
+$origenes->yactivo = $origenes->y14;
+$origenes->zactivo = $origenes->z14;
+$origenes->aactivo = $origenes->a14;
+$origenes->coordactivas=14;
+$origenes->save();
+
+break;
+
+case "15":
+$origenes->xactivo = $origenes->x15;
+$origenes->yactivo = $origenes->y15;
+$origenes->zactivo = $origenes->z15;
+$origenes->aactivo = $origenes->a15;
+$origenes->coordactivas=15;
+$origenes->save();
+
+break;
+
+case "16":
+
+$origenes->xactivo = $origenes->x16;
+$origenes->yactivo = $origenes->y16;
+$origenes->zactivo = $origenes->z16;
+$origenes->aactivo = $origenes->a16;
+$origenes->coordactivas=16;
+$origenes->save();
+break;
+
+
+
+
+    }
+
+    }
+
   
             //Codigo para mandar pause al tinyG.
  /*           

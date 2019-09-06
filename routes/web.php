@@ -111,6 +111,30 @@ Route::get('/api/arduino2/{O343}/{O345}/{O344}/{I4}/{I8}/{I14}/{O0}/{O4}/{O12}/{
 'middleware' => 'cors',]);
 
 
+/*******ORIGEN */
+
+Route::get('/api/cambiarorigenes/{x1}/{y1}/{a1}/{z1}/{x2}/{y2}/{a2}/{z2}/{x3}/{y3}/{a3}/{z3}/{x4}/{y4}/{a4}/{z4}/{x5}/{y5}/{a5}/{z5}/{x6}/{y6}/{a6}/{z6}/{x7}/{y7}/{a7}/{z7}/{x8}/{y8}/{a8}/{z8}/{x9}/{y9}/{a9}/{z9}/{x10}/{y10}/{a10}/{z10}/{x11}/{y11}/{a11}/{z11}/{x12}/{y12}/{a12}/{z12}/{x13}/{y13}/{a13}/{z13}/{x14}/{y14}/{a14}/{z14}/{x15}/{y15}/{a15}/{z15}/{x16}/{y16}/{a16}/{z16}', [
+    'as' => 'cambio.origenes',
+        'uses' => 'origenescontroller@update',
+    'middleware' => 'cors',]);
+
+    Route::get('/api/obtenerorigenes/', [
+        'as' => 'obtener.origenes',
+            'uses' => 'origenescontroller@getjson',
+        'middleware' => 'cors',]);
+
+        Route::get('/api/actualizarorigenusado/{coord}', [
+            'as' => 'actualizar.origen',
+                'uses' => 'origenescontroller@UAO',
+            'middleware' => 'cors',]);
+            Route::get('/api/uto/{coord}/{x1}/{y1}/{a1}/{z1}', [
+                'as' => 'uto.origen',
+                    'uses' => 'origenescontroller@UTO',
+                'middleware' => 'cors',]);
+
+
+    /************Fin origen */
+
 Route::get('/api/arduino3/{I1}/{I2}/{I5}/{I10}/{I11}/{I32}/{I33}/{I34}/{I35}/{I40}/{I42}/{I43}/{O36}/{O37}/{O38}/{O39}/{O44}/{O45}/{O46}/{I48}/{I49}/{I50}/{I51}/{I52}/{I53}/{I54}/{I55}/{I56}/{I57}/{I58}/{I59}/{I60}/{I61}/{I62}/{I63}/{O48}/{O49}/{O50}/{O51}/{O52}/{O53}/{O54}/{O55}/{O56}/{I64}/{I65}/{I66}/{I67}/{I68}/{I69}/{I70}/{I71}/{I72}/{I82}/{O338}', [
 'as' => 'cambio.estado.arduino3',
     'uses' => 'errorscontroller@cambioestadoarduino3',
