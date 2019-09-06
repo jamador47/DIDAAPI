@@ -132,6 +132,12 @@ Route::get('/api/cambiarorigenes/{x1}/{y1}/{a1}/{z1}/{x2}/{y2}/{a2}/{z2}/{x3}/{y
                     'uses' => 'origenescontroller@UTO',
                 'middleware' => 'cors',]);
 
+                Route::get('/api/resetuto', [
+                    'as' => 'reset.origen',
+                        'uses' => 'origenescontroller@resetUTO',
+                    'middleware' => 'cors',]);
+    
+
 
     /************Fin origen */
 
