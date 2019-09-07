@@ -324,6 +324,14 @@ class origenescontroller extends Controller
 
     }
 
+    public function getUTOjson()
+    {
+        $origenes = origenesuto::find(1);
+        return $origenes;
+
+    }
+
+
 
     public function resetUTO(){
         $origenes = origenes::find(1);
