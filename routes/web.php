@@ -129,12 +129,14 @@ Route::get('/api/cambiarorigenes/{x1}/{y1}/{a1}/{z1}/{x2}/{y2}/{a2}/{z2}/{x3}/{y
             'uses' => 'origenescontroller@getUTOjson',
         'middleware' => 'cors',]);
 
-        
+
 
         Route::get('/api/actualizarorigenusado/{coord}', [
             'as' => 'actualizar.origen',
                 'uses' => 'origenescontroller@UAO',
             'middleware' => 'cors',]);
+
+            
             Route::get('/api/uto/{coord}/{x1}/{y1}/{a1}/{z1}', [
                 'as' => 'uto.origen',
                     'uses' => 'origenescontroller@UTO',
