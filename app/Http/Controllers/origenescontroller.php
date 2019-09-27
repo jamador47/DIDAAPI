@@ -317,7 +317,7 @@ class origenescontroller extends Controller
 
 
 
-    public function getjson()
+    public function geteljson()
     {
         $origenes = origenes::find(1);
         return $origenes;

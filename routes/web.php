@@ -120,7 +120,7 @@ Route::get('/api/cambiarorigenes/{x1}/{y1}/{a1}/{z1}/{x2}/{y2}/{a2}/{z2}/{x3}/{y
 
     Route::get('/api/obtenerorigenes/', [
         'as' => 'obtener.origenes',
-            'uses' => 'origenescontroller@getjson',
+            'uses' => 'origenescontroller@geteljson',
         'middleware' => 'cors',]);
 
         Route::get('/api/obtenerorigenes2/', [
