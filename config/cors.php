@@ -14,10 +14,10 @@ return [
    
     'supportsCredentials' => false,
     'allowedOrigins' => ['*'],
-    'allowedOriginsPatterns' => ['*'],
+    'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
-    'exposedHeaders' => ['*'],
-    'maxAge' => 0,
+    'exposedHeaders' => [],
+    'maxAge' => 100,
 
 ];
