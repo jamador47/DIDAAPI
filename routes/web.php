@@ -118,15 +118,12 @@ Route::get('/api/cambiarorigenes/{x1}/{y1}/{a1}/{z1}/{x2}/{y2}/{a2}/{z2}/{x3}/{y
         'uses' => 'origenescontroller@update',
     'middleware' => 'cors',]);
 
-    Route::get('/api/obtenerorigenes/', [
-        'as' => 'obtener.origenes',
-            'uses' => 'origenescontroller@geteljson',
-        'middleware' => 'cors',]);
 
-        Route::get('/api/obtenerorigenes2/', [
-            'as' => 'obtener5.origenes',
-                'uses' => 'origenescontroller@geteljson',
-            'middleware' => 'cors',]);
+            Route::get('/api/obtenerorigenesf/', [
+                'as' => 'get.origenesf',
+                    'uses' => 'origenescontroller@geteljson',
+                'middleware' => 'cors',]);
+        
         
     Route::get('/api/obtenerorigenesusar/', [
         'as' => 'get.origenes',
