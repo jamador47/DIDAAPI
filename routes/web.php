@@ -23,10 +23,28 @@ Route::get('/api/{errorid}={estado}', [
 
 
 
+
+
+
 // CREAR TABLAS CH
 Route::get('/iniciartablach', [
     'as' => 'iniciar.ch',
         'uses' => 'herramientascontroller@creartablas',
+        'middleware' => 'cors',
+    ]);
+
+
+// SIguiente heramienta
+    Route::get('/sigherramienta/{sigherr}', [
+        'as' => 'sigherr',
+            'uses' => 'sigherramientacontroller@update',
+            'middleware' => 'cors',
+        ]);
+
+//GET siguiente heramienta
+Route::get('/getsigherr', [
+    'as' => 'get.herr',
+        'uses' => 'sigherramientacontroller@geteljson',
         'middleware' => 'cors',
     ]);
 
