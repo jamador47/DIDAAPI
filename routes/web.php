@@ -42,8 +42,9 @@ Route::get('/iniciartablach', [
         ]);
 
 //GET siguiente heramienta
-Route::get('/getsigherr', [
-    'as' => 'get.herr',
+
+Route::get('/getsigherramienta', [
+    'as' => 'get.herramienta',
         'uses' => 'sigherramientacontroller@geteljson',
         'middleware' => 'cors',
     ]);
