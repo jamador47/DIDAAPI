@@ -96,7 +96,7 @@ Route::get('/getsigherramienta', [
                 'middleware' => 'cors',
             ]);
 
-            Route::get('/cambiobrazomodoh', [
+            Route::get('/cambiobrazomodoh/{herr}', [
                 'as' => 'get.brazoh',
                     'uses' => 'herramientascontroller@cambioherramientabrazomodoH',
                     'middleware' => 'cors',

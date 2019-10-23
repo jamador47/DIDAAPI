@@ -164,9 +164,10 @@ class herramientascontroller extends Controller
 
 
         // CAMBIO EN EL MODO SEGUIR HERRAMIENTA
-    public function cambioherramientabrazomodoH(){
+    public function cambioherramientabrazomodoH($herr){
     // CAMBIAR DATOS COMPLETOS DE POCKET DE LA HERRAMIENTA EN HUSILLO Y LA HERRAMIENTA listacambio. 
-            $herramientalistocambio = \DB::table('herramientas')->where('listocambio', 1 )->first();
+            $herramientalistocambio = \DB::table('herramientas')->where('pocket', $herr )->first();
+            
             $herramientahusillo = \DB::table('herramientas')->where('enhusillo', 1 )->first();
 
             if ($herramientahusillo == NULL){
