@@ -183,12 +183,12 @@ class herramientascontroller extends Controller
             $hlistocambio->herramienta = $herramientahusillo->herramienta;
             $hlistocambio->longitud = $herramientahusillo->longitud;
             $hlistocambio->diametro = $herramientahusillo->diametro;
-            $hlistocambio->enhusillo = 1;
+          
             $hlistocambio->listocambio = 0;
             $hhusillo->herramienta = $herramientalistocambio->herramienta;
             $hhusillo->longitud = $herramientalistocambio->longitud;
             $hhusillo->diametro = $herramientalistocambio->diametro;
-            $hhusillo->enhusillo = 0;
+          
             $hhusillo->listocambio = 1;
             $hlistocambio->save();
             $hhusillo->save();
