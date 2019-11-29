@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\origenes;
 use App\origenesuto;
+use App\origenesactivos;
 
 use WebSocket\Client;
 
@@ -406,7 +407,12 @@ class origenescontroller extends Controller
     {
         $origenes = origenes::find(1);
         $origenesuto = origenesuto::find(1);
+        $origenesactivos = origenesactivos::find(1);
 
+        if ($origenesactivos == NULL){
+            $origenesactivos = new origenesactivos;
+        }
+            
 
         switch ($coord){
 
@@ -425,6 +431,12 @@ class origenescontroller extends Controller
             $origenesuto->y1 = $yactivo;
             $origenesuto->a1 = $aactivo;
             $origenesuto->z1 = $zactivo;
+            
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
             break;
@@ -443,6 +455,11 @@ class origenescontroller extends Controller
             $origenesuto->y2 = $yactivo;
             $origenesuto->a2 = $aactivo;
             $origenesuto->z2 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
             
@@ -462,6 +479,11 @@ class origenescontroller extends Controller
             $origenesuto->y3 = $yactivo;
             $origenesuto->a3 = $aactivo;
             $origenesuto->z3 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -481,6 +503,11 @@ class origenescontroller extends Controller
             $origenesuto->y4 = $yactivo;
             $origenesuto->a4 = $aactivo;
             $origenesuto->z4 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -499,6 +526,11 @@ class origenescontroller extends Controller
             $origenesuto->y5 = $yactivo;
             $origenesuto->a5 = $aactivo;
             $origenesuto->z5 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -519,6 +551,11 @@ class origenescontroller extends Controller
             $origenesuto->y6 = $yactivo;
             $origenesuto->a6 = $aactivo;
             $origenesuto->z6 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -538,6 +575,11 @@ class origenescontroller extends Controller
             $origenesuto->y7 = $yactivo;
             $origenesuto->a7 = $aactivo;
             $origenesuto->z7 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -557,6 +599,11 @@ class origenescontroller extends Controller
             $origenesuto->y8 = $yactivo;
             $origenesuto->a8 = $aactivo;
             $origenesuto->z8 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -576,6 +623,11 @@ class origenescontroller extends Controller
             $origenesuto->y9 = $yactivo;
             $origenesuto->a9 = $aactivo;
             $origenesuto->z9 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -595,6 +647,11 @@ class origenescontroller extends Controller
             $origenesuto->y10 = $yactivo;
             $origenesuto->a10 = $aactivo;
             $origenesuto->z10 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
             
@@ -613,6 +670,11 @@ class origenescontroller extends Controller
             $origenesuto->y11 = $yactivo;
             $origenesuto->a11 = $aactivo;
             $origenesuto->z11 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -632,6 +694,11 @@ class origenescontroller extends Controller
             $origenesuto->y12 = $yactivo;
             $origenesuto->a12 = $aactivo;
             $origenesuto->z12 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -652,6 +719,11 @@ class origenescontroller extends Controller
             $origenesuto->y13 = $yactivo;
             $origenesuto->a13 = $aactivo;
             $origenesuto->z13 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
             break;
@@ -670,6 +742,11 @@ class origenescontroller extends Controller
             $origenesuto->y14 = $yactivo;
             $origenesuto->a14 = $aactivo;
             $origenesuto->z14 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
 
@@ -688,6 +765,11 @@ class origenescontroller extends Controller
             $origenesuto->y15 = $yactivo;
             $origenesuto->a15 = $aactivo;
             $origenesuto->z15 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
             
@@ -707,6 +789,11 @@ class origenescontroller extends Controller
             $origenesuto->y16 = $yactivo;
             $origenesuto->a16 = $aactivo;
             $origenesuto->z16 = $zactivo;
+            $origenesactivos->x = $xactivo;
+            $origenesactivos->y = $yactivo;
+            $origenesactivos->z = $zactivo;
+            $origenesactivos->a = $aactivo;
+            $origenesactivos->save();
             $origenesuto->save();
 
             break;
@@ -717,6 +804,12 @@ class origenescontroller extends Controller
     public function UAO($coord)
     {
         $origenes = origenes::find(1);
+        $origenesactivos = origenesactivos::find(1);
+
+        if ($origenesactivos == NULL){
+            $origenesactivos = new origenesactivos;
+        }
+            
         switch ($coord) {
 
             case "1":
@@ -725,6 +818,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z1;
             $origenes->aactivo = $origenes->a1;
             $origenes->coordactivas=1;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
             break;
 
@@ -735,6 +833,12 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z2;
             $origenes->aactivo = $origenes->a2;
             $origenes->coordactivas=2;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
+            
             $origenes->save();
 
             break;
@@ -746,6 +850,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z3;
             $origenes->aactivo = $origenes->a3;
             $origenes->coordactivas=3;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
             break;
 
@@ -755,6 +864,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z4;
             $origenes->aactivo = $origenes->a4;
             $origenes->coordactivas=4;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -765,6 +879,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z5;
             $origenes->aactivo = $origenes->a5;
             $origenes->coordactivas=5;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -776,6 +895,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z6;
             $origenes->aactivo = $origenes->a6;
             $origenes->coordactivas=6;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
             break;
 
@@ -786,6 +910,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z7;
             $origenes->aactivo = $origenes->a7;
             $origenes->coordactivas=7;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
             break;
 
@@ -795,6 +924,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z8;
             $origenes->aactivo = $origenes->a8;
             $origenes->coordactivas=8;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -806,6 +940,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z9;
             $origenes->aactivo = $origenes->a9;
             $origenes->coordactivas=9;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -816,6 +955,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z10;
             $origenes->aactivo = $origenes->a10;
             $origenes->coordactivas=10;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -826,6 +970,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z11;
             $origenes->aactivo = $origenes->a11;
             $origenes->coordactivas=11;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -836,6 +985,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z12;
             $origenes->aactivo = $origenes->a12;
             $origenes->coordactivas=12;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -847,6 +1001,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z13;
             $origenes->aactivo = $origenes->a13;
             $origenes->coordactivas=13;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
             break;
 
@@ -856,6 +1015,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z14;
             $origenes->aactivo = $origenes->a14;
             $origenes->coordactivas=14;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -866,6 +1030,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z15;
             $origenes->aactivo = $origenes->a15;
             $origenes->coordactivas=15;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
 
             break;
@@ -877,6 +1046,11 @@ class origenescontroller extends Controller
             $origenes->zactivo = $origenes->z16;
             $origenes->aactivo = $origenes->a16;
             $origenes->coordactivas=16;
+            $origenesactivos->x = $origenes->xactivo;
+            $origenesactivos->y = $origenes->yactivo;
+            $origenesactivos->z = $origenes->zactivo;
+            $origenesactivos->a = $origenes->aactivo;
+            $origenesactivos->save();
             $origenes->save();
             break;
 
