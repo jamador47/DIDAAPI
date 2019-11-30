@@ -334,6 +334,12 @@ class origenescontroller extends Controller
 
 
 
+    public function jsonactivos(){
+
+        $origenes = origenesactivos::find(1);
+        return $origenes;
+    }
+
     public function resetUTO(){
         $origenes = origenes::find(1);
         $origenesuto = origenesuto::find(1);
