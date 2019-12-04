@@ -829,7 +829,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
             break;
 
 
@@ -845,7 +844,6 @@ class origenescontroller extends Controller
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
             
-            $origenes->save();
 
             break;
 
@@ -861,7 +859,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
             break;
 
             case "4":
@@ -875,7 +872,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -890,7 +886,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -906,7 +901,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
             break;
 
             case "7":
@@ -921,7 +915,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
             break;
 
             case "8":
@@ -935,7 +928,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -951,7 +943,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -966,7 +957,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -981,7 +971,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -996,7 +985,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -1012,7 +1000,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
             break;
 
             case "14":
@@ -1026,7 +1013,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -1041,7 +1027,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
 
             break;
 
@@ -1057,7 +1042,6 @@ class origenescontroller extends Controller
             $origenesactivos->z = $origenes->zactivo;
             $origenesactivos->a = $origenes->aactivo;
             $origenesactivos->save();
-            $origenes->save();
             break;
 
 
