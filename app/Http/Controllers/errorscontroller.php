@@ -562,13 +562,13 @@ $client->receive();
 $client->send("send COM3 !");   
 $client->receive();
 }*/
-        
+        /*
                if(intval($inputs[8]) == 0){
   $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
 $client->send("send COM3 !");   
 $client->receive();
-}
+}*/
         // En caso de que no sea el primer error 
                      
                    
@@ -985,6 +985,7 @@ $client->receive();
 $client->send("send COM3 !");   
 $client->receive();
 }
+
                 if(intval($inputs[1]) == 0){
            $pg = file('http://192.168.0.88/arduino/digital/11/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');  $pg = file('http://192.168.0.88/arduino/digital/19/0');  $pg = file('http://192.168.0.88/arduino/digital/29/0');  $pg = file('http://192.168.0.88/arduino/digital/27/0');  $pg = file('http://192.168.0.88/arduino/digital/22/0');
             $client = new Client("ws://localhost:8989/ws");
