@@ -251,24 +251,30 @@ class herramientascontroller extends Controller
     */
 
 
-    /*
-    public function actualizarhusillo($item ,$enhusillo)
+    
+    public function actualizarhusillo($herenhusillo)
     {
+        
+
+        $her = intval($herenhusillo);
 
 
-        $modo = herramientas::find(1);
 
-        if ($modo->modoh){
-            $herramientas = \DB::table('herramientas')->where('herramienta', $item )->first();
-        }
-        else{
-            $herramientas = \DB::table('herramientas')->where('pocket', $item )->first();
+        for ($x = 1; $x <= 18; $x++){
 
-        }
-
-        $h = herramientas::find($herramientas->id);
-        $h->enhusillo = $enhusillo;
+        $h = herramientas::find($x);
+        $h->enhusillo = 0;
         $h->save();
+
+         }
+        
+
+         if ($her != 0){
+         $h = herramientas::find($her); 
+         $h->enhusillo = 1;
+         $h->save();
+        }
+         
     }
 
 
