@@ -50,7 +50,7 @@ Route::get('/getsigherramienta', [
     ]);
 
 
-    Route::get('/actualizarh/{herenhusillo}', [
+    Route::get('/actualizarher/{herenhusillo}', [
         'as' => 'actualizar.h',
             'uses' => 'herramientascontroller@actualizarhusillo',
             'middleware' => 'cors',
